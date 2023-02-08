@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 | Omid Taheri</title>
+    <link>https://otaheri.github.io/publication-type/3/</link>
+      <atom:link href="https://otaheri.github.io/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
+    <description>3</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://otaheri.github.io/media/logo_huf4879d399e56855f7c1fe09e7af1fbc4_257295_300x300_fit_lanczos_3.png</url>
+      <title>3</title>
+      <link>https://otaheri.github.io/publication-type/3/</link>
+    </image>
+    
+    <item>
+      <title>GRIP: Generating Interaction Poses Conditioned on Object and Body Motion</title>
+      <link>https://otaheri.github.io/publication/2023_grip/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2023_grip/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Hands are dexterous and highly versatile manipulators,
+that are central to how humans interact with objects and
+their environment. Consequently, modeling realistic hand
+object interactions, including the subtle motion of individual
+fingers, is critical for applications in computer graphics,
+computer vision, and mixed reality. To address this
+challenge, we propose GRIP, a learning-based method that
+synthesizes the motion of both left and right hands before,
+during, and after interaction with objects. We leverage the
+dynamics between the body and the object to extract two
+types of novel temporal interaction cues. We then define a
+two-stage inference pipeline in which GRIP first outputs the
+consistent interaction motion by taking a new approach to
+modeling motion temporal consistency in the latent space.
+In the second stage, GRIP generates refined hand poses to
+avoid finger-to-object penetrations. Both quantitative experiments
+and perceptual studies demonstrate that GRIP
+outperforms existing methods and generalizes to unseen objects
+and motions. Furthermore, GRIP achieves real-time
+performance with 45 fps hand pose prediction. Our models
+and code will be available for research purposes.&lt;/p&gt;
+&lt;!--
+# Video
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/A7b8DYovDZY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+@inproceedings{taheri2022goal,
+    title = {{GOAL}: {G}enerating {4D} Whole-Body Motion for Hand-Object Grasping},
+    author = {Taheri, Omid and Choutas, Vasileios and Black, Michael J. and Tzionas, Dimitrios},
+    booktitle = {Conference on Computer Vision and Pattern Recognition ({CVPR})},
+    year = {2022},
+    url = {https://goal.is.tue.mpg.de}
+}
+
+@inproceedings{GRAB:2020,
+    title = {{GRAB}: {A} Dataset of Whole-Body Human Grasping of Objects},
+    author = {Taheri, Omid and Ghorbani, Nima and Black, Michael J. and Tzionas, Dimitrios},
+    booktitle = {European Conference on Computer Vision ({ECCV})},
+    year = {2020},
+    url = {https://grab.is.tue.mpg.de}
+}
+```
+
+--&gt;</description>
+    </item>
+    
+    <item>
+      <title>ARCTIC: Articulated Objects in Free-form Hand Interaction</title>
+      <link>https://otaheri.github.io/publication/2023_arctic/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2023_arctic/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;We use our hands to interact with and to manipulate objects. Articulated objects are especially interesting since they
+often require the full dexterity of human hands to manipulate them. To understand, model, and synthesize such interactions,
+automatic and robust methods that reconstruct hands and articulated objects in 3D from a color image are needed. Existing
+methods for estimating 3D hand and object pose from images focus on rigid objects. In part, because such methods rely on
+training data and no dataset of articulated object manipulation exists. Consequently, we introduce ARCTIC – the first dataset
+of free-form interactions of hands and articulated objects. ARCTIC has 1.2M images paired with accurate 3D meshes for
+both hands and for objects that move and deform over time. The dataset also provides hand-object contact information.
+To show the value of our dataset, we perform two novel tasks on ARCTIC: (1) 3D reconstruction of two hands and an articulated
+object in interaction; (2) an estimation of dense hand-object relative distances, which we call interaction field estimation.
+For the first task, we present ArcticNet, a baseline method for the task of jointly reconstructing two hands and an articulated object
+from an RGB image. For interaction field estimation, we predict the relative distances from each hand vertex to the object surface,
+and vice versa. We introduce InterField, the first method that estimates such distances from a single RGB image. We provide
+qualitative and quantitative experiments for both tasks, and provide detailed analysis on the data.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+--&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Hidden Intricacy of Loot Box Design: A Granular Description of Random Monetized Reward Features</title>
+      <link>https://otaheri.github.io/example/2020-ballou-et-al-hidden/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/example/2020-ballou-et-al-hidden/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Human Leg Motion Tracking by Fusing IMUs and RGB Camera Data Using Extended Kalman Filter</title>
+      <link>https://otaheri.github.io/publication/2019_leg_imu/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2019_leg_imu/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Human motion capture is frequently used to study rehabilitation and clinical problems, as well
+as to provide realistic animation for the entertainment industry. IMU-based systems, as well as Markerbased
+motion tracking systems, are most popular methods to track movement due to their low cost of
+implementation and lightweight. This paper proposes a quaternion-based Extended Kalman filter
+approach to recover the human leg segments motions with a set of IMU sensors data fused with
+cameramarker system data. In this paper, an Extended Kalman Filter approach is developed to fuse the data of
+two IMUs and one RGB camera for human leg motion tracking. Based on the complementary properties
+of the inertial sensors and camera-marker system, in the introduced new measurement model, the
+orientation data of the upper leg and the lower leg is updated through three measurement equations. The
+positioning of the human body is made possible by the tracked position of the pelvis joint by the camera
+marker system. A mathematical model has been utilized to estimate joints’ depth in 2D images. The
+efficiency of the proposed algorithm is evaluated by an optical motion tracker system.&lt;/p&gt;
+&lt;!--
+# Video
+
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+--&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
