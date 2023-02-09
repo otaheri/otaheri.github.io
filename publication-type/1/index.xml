@@ -13,55 +13,6 @@
     </image>
     
     <item>
-      <title>GOAL: Generating 4D Whole-Body Motion for Hand-Object Grasping</title>
-      <link>https://otaheri.github.io/publication/goal-generating-4d-whole-body-motion-for-hand-object-grasping/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/publication/goal-generating-4d-whole-body-motion-for-hand-object-grasping/</guid>
-      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;Generating digital humans that move realistically has many applications and is widely studied, but existing methods focus
-on the major limbs of the body, ignoring the hands and head. Hands have been separately studied but the focus has been on
-generating realistic static grasps of objects. To synthesize virtual characters that interact with the world, we need to
-generate full-body motions and realistic hand grasps simultaneously. Both sub-problems are challenging on their own and,
-together, the state-space of poses is significantly larger, the scales of hand and body motions differ, and the whole-body
-posture and the hand grasp must agree, satisfy physical constraints, and be plausible. Additionally, the head is involved
-because the avatar must look at the object to interact with it. For the first time, we address the problem of generating
-full-body, hand and head motions of an avatar grasping an unknown object. As input, our method, called GOAL, takes a 3D object,
-its position, and a starting 3D body pose and shape. GOAL outputs a sequence of whole-body poses using two novel networks.
-First, GNet generates a goal whole-body grasp with a realistic body, head, arm, and hand pose, as well as hand-object contact.
-Second, MNet generates the motion between the starting and goal pose. This is challenging, as it requires the avatar to walk
-towards the object with foot-ground contact, orient the head towards it, reach out, and grasp it with a realistic hand pose
-and hand-object contact. To achieve this the networks exploit a representation that combines SMPL-X body parameters and 3D vertex offsets.
-We train and evaluate GOAL, both qualitatively and quantitatively, on the GRAB dataset. Results show that GOAL generalizes well
-to unseen objects, outperforming baselines. A perceptual study shows that GOAL’s generated motions approach the realism of GRAB’s
-ground truth. GOAL takes a step towards synthesizing realistic full-body object grasping. Our models and code are available for research.&lt;/p&gt;
-&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/A7b8DYovDZY&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&#34;data-and-code&#34;&gt;Data and Code&lt;/h1&gt;
-&lt;p&gt;Please register and accept the License agreement on &lt;a href=&#34;https://grab.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GRAB&lt;/a&gt; website in order to get access to the GRAB dataset.&lt;/p&gt;
-&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{taheri2022goal,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    title = {{GOAL}: {G}enerating {4D} Whole-Body Motion for Hand-Object Grasping},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    author = {Taheri, Omid and Choutas, Vasileios and Black, Michael J. and Tzionas, Dimitrios},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    booktitle = {Conference on Computer Vision and Pattern Recognition ({CVPR})},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    year = {2022},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    url = {https://goal.is.tue.mpg.de}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{GRAB:2020,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    title = {{GRAB}: {A} Dataset of Whole-Body Human Grasping of Objects},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    author = {Taheri, Omid and Ghorbani, Nima and Black, Michael J. and Tzionas, Dimitrios},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    booktitle = {European Conference on Computer Vision ({ECCV})},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    year = {2020},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    url = {https://grab.is.tue.mpg.de}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    
-    <item>
       <title>InterCap: Joint Markerless 3D Tracking of Humans and Objects in Interaction</title>
       <link>https://otaheri.github.io/publication/2022_intercap/</link>
       <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
@@ -102,22 +53,6 @@ fill an important gap in the literature and support many research directions. Ou
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    series       = {Lecture Notes in Computer Science}
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Actions, not gestures: contextualising embodied controller interactions in immersive virtual reality</title>
-      <link>https://otaheri.github.io/example/2021-ratcliffe-et-al-actions/</link>
-      <pubDate>Thu, 09 Dec 2021 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/example/2021-ratcliffe-et-al-actions/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Not Very Effective: Validity Issues of the Effectance in Games Scale</title>
-      <link>https://otaheri.github.io/example/2021-ballou-et-al-not-very-effective/</link>
-      <pubDate>Mon, 18 Oct 2021 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/example/2021-ballou-et-al-not-very-effective/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -165,61 +100,6 @@ ground truth. GOAL takes a step towards synthesizing realistic full-body object 
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    booktitle = {European Conference on Computer Vision ({ECCV})},
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    year = {2020},
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    url = {https://grab.is.tue.mpg.de}
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>Are You Open? A Content Analysis of Transparency and Openness Guidelines in HCI Journals</title>
-      <link>https://otaheri.github.io/example/2021-ballou-et-al-are-you-open/</link>
-      <pubDate>Fri, 29 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/example/2021-ballou-et-al-are-you-open/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GRAB: A Dataset of Whole-Body Human Grasping of Objects</title>
-      <link>https://otaheri.github.io/publication/grab-a-dataset-of-whole-body-human-grasping-of-objects/</link>
-      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/publication/grab-a-dataset-of-whole-body-human-grasping-of-objects/</guid>
-      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;Training computers to understand, model, and synthesize human grasping requires a rich dataset containing complex 3D object shapes,
-detailed contact information, hand pose and shape, and the 3D body motion over time. While &amp;ldquo;grasping&amp;rdquo; is commonly thought of as a
-single hand stably lifting an object, we capture the motion of the entire body and adopt the generalized notion of &amp;ldquo;whole-body grasps&amp;rdquo;.
-Thus, we collect a new dataset, called GRAB (GRasping Actions with Bodies), of whole-body grasps, containing full 3D shape and pose sequences of
-10 subjects interacting with 51 everyday objects of varying shape and size. Given MoCap markers, we fit the full 3D body shape and pose,
-including the articulated face and hands, as well as the 3D object pose. This gives detailed 3D meshes over time, from which we compute
-contact between the body and object. This is a unique dataset, that goes well beyond existing ones for modeling and understanding how
-humans grasp and manipulate objects, how their full body is involved, and how interaction varies with the task.
-We illustrate the practical value of GRAB with an example application; we train GrabNet, a conditional generative network,
-to predict 3D hand grasps for unseen 3D object shapes.&lt;/p&gt;
-&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
-&lt;p&gt;We capture a very accurate dataset, named GRAB, of people interacting with 3D objects. We then use it to train a network, GrabNet, that generates hand grasp for novel objects.&lt;/p&gt;
-&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe src=&#34;https://www.youtube.com/embed/s5syYMxmNHA&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&#34;bloopers-fun-d&#34;&gt;Bloopers (Fun :D)&lt;/h2&gt;
-&lt;div style=&#34;text-align:center;&#34;&gt;
-&lt;iframe src=&#34;https://www.youtube.com/embed/nRxRn4ZzQ60&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;data-and-code&#34;&gt;Data and Code&lt;/h1&gt;
-&lt;p&gt;Please register and accept the License agreement on &lt;a href=&#34;https://grab.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; website in order to get access to the GRAB dataset. The license and downloads section include explicit restrictions per subject, to which you agree to comply with.&lt;/p&gt;
-&lt;p&gt;When creating an account, please opt-in for email communication, so that we can reach out to you per email to announce potential significant updates.&lt;/p&gt;
-&lt;p&gt;GRAB dataset (works only after sign-in)
-GrabNet data(works only after sign-in)
-GrabNet model files/weights (works only after sign-in)
-Code for GRAB (GitHub)
-Code for GrabNet(GitHub)&lt;/p&gt;
-&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{GRAB:2020,
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  title = {{GRAB}: A Dataset of Whole-Body Human Grasping of Objects},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  author = {Taheri, Omid and Ghorbani, Nima and Black, Michael J. and Tzionas, Dimitrios},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  booktitle = {European Conference on Computer Vision (ECCV)},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  year = {2020},
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  url = {https://grab.is.tue.mpg.de}
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
