@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- This site was created with Wowchemy. https://www.wowchemy.com -->
-<!-- Last Published: February 9, 2023 --><html lang="en-us" >
+<!-- Last Published: March 30, 2023 --><html lang="en-us" >
 
 
 <head>
@@ -239,6 +239,45 @@
 
 
 
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85461459-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-85461459-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+
 
 
 
@@ -372,7 +411,7 @@
     "name": "Omid Taheri",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://otaheri.github.io/media/logo_huf4879d399e56855f7c1fe09e7af1fbc4_257295_192x192_fit_lanczos_3.png"
+      "url": "https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_192x192_fill_lanczos_center_3.png"
     }
   },
   "description": "Abstract Generating digital humans that move realistically has many applications and is widely studied, but existing methods focus on the major limbs of the body, ignoring the hands and head. Hands have been separately studied but the focus has been on generating realistic static grasps of objects."
@@ -489,8 +528,6 @@
 
 
 
-  
-
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
@@ -498,9 +535,7 @@
 
       
       <div class="d-none d-lg-inline-flex">
-        <a class="navbar-brand" href="/"><img src="/media/logo_huf4879d399e56855f7c1fe09e7af1fbc4_257295_0x70_resize_lanczos_3.png" alt="Omid Taheri"
-            
-            ></a>
+        <a class="navbar-brand" href="/">Omid Taheri</a>
       </div>
       
 
@@ -513,9 +548,7 @@
 
       
       <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-        <a class="navbar-brand" href="/"><img src="/media/logo_huf4879d399e56855f7c1fe09e7af1fbc4_257295_0x70_resize_lanczos_3.png" alt="Omid Taheri"
-          
-          ></a>
+        <a class="navbar-brand" href="/">Omid Taheri</a>
       </div>
       
 
