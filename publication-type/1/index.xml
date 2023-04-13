@@ -5,12 +5,96 @@
     <link>https://otaheri.github.io/publication-type/1/</link>
       <atom:link href="https://otaheri.github.io/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
     <description>1</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
       <title>1</title>
       <link>https://otaheri.github.io/publication-type/1/</link>
     </image>
+    
+    <item>
+      <title>ARCTIC: Articulated Objects in Free-form Hand Interaction</title>
+      <link>https://otaheri.github.io/publication/2023_arctic/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2023_arctic/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;We use our hands to interact with and to manipulate objects. Articulated objects are especially interesting since they
+often require the full dexterity of human hands to manipulate them. To understand, model, and synthesize such interactions,
+automatic and robust methods that reconstruct hands and articulated objects in 3D from a color image are needed. Existing
+methods for estimating 3D hand and object pose from images focus on rigid objects. In part, because such methods rely on
+training data and no dataset of articulated object manipulation exists. Consequently, we introduce ARCTIC – the first dataset
+of free-form interactions of hands and articulated objects. ARCTIC has 1.2M images paired with accurate 3D meshes for
+both hands and for objects that move and deform over time. The dataset also provides hand-object contact information.
+To show the value of our dataset, we perform two novel tasks on ARCTIC: (1) 3D reconstruction of two hands and an articulated
+object in interaction; (2) an estimation of dense hand-object relative distances, which we call interaction field estimation.
+For the first task, we present ArcticNet, a baseline method for the task of jointly reconstructing two hands and an articulated object
+from an RGB image. For interaction field estimation, we predict the relative distances from each hand vertex to the object surface,
+and vice versa. We introduce InterField, the first method that estimates such distances from a single RGB image. We provide
+qualitative and quantitative experiments for both tasks, and provide detailed analysis on the data.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+--&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>IPMAN: 3D Human Pose Estimation via Intuitive Physics</title>
+      <link>https://otaheri.github.io/publication/2023_ipman/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2023_ipman/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;The estimation of 3D human body shape and pose from images has advanced rapidly.
+While the results are often well aligned with image features in the camera view,
+the 3D pose is often physically implausible; bodies lean, float, or penetrate the floor.
+This is because most methods ignore the fact that bodies are typically supported by the scene.
+To address this, some methods exploit physics engines to enforce physical plausibility.
+Such methods, however, are not differentiable, rely on unrealistic proxy bodies, and are difficult
+to integrate into existing optimization and learning frameworks. To account for this,
+we take a different approach that exploits novel intuitive-physics (IP) terms that can be inferred
+from a 3D SMPL body interacting with the scene. Specifically, we infer biomechanically relevant
+features such as the pressure heatmap of the body on the floor, the Center of Pressure (CoP) from
+the heatmap, and the SMPL body’s Center of Mass (CoM) projected on the floor. With these, we develop IPMAN,
+to estimate a 3D body from a color image in a “stable” configuration by encouraging plausible floor
+contact and overlapping CoP and CoM. Our IP terms are intuitive, easy to implement, fast to compute,
+and can be integrated into any SMPL-based optimization or regression method; we show examples
+of both. To evaluate our method, we present MoYo, a dataset with synchronized multi-view color
+images and 3D bodies with complex poses, body-floor contact, and ground-truth CoM and pressure.
+Evaluation on MoYo, RICH and Human3.6M show that our IP terms produce more plausible results than
+the state of the art; they improve accuracy for static poses, while not hurting dynamic ones.
+Code and data will be available for research.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!--
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+--&gt;
+</description>
+    </item>
     
     <item>
       <title>InterCap: Joint Markerless 3D Tracking of Humans and Objects in Interaction</title>

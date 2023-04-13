@@ -5,7 +5,7 @@
     <link>https://otaheri.github.io/publication-type/3/</link>
       <atom:link href="https://otaheri.github.io/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
     <description>3</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Oct 2022 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Nov 2022 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
       <title>3</title>
@@ -15,7 +15,7 @@
     <item>
       <title>GRIP: Generating Interaction Poses Conditioned on Object and Body Motion</title>
       <link>https://otaheri.github.io/publication/2023_grip/</link>
-      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://otaheri.github.io/publication/2023_grip/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
 &lt;p&gt;Hands are dexterous and highly versatile manipulators,
@@ -73,45 +73,6 @@ Please register and accept the License agreement on [GRAB](https://grab.is.tue.m
 }
 ```
 
---&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ARCTIC: Articulated Objects in Free-form Hand Interaction</title>
-      <link>https://otaheri.github.io/publication/2023_arctic/</link>
-      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/publication/2023_arctic/</guid>
-      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;We use our hands to interact with and to manipulate objects. Articulated objects are especially interesting since they
-often require the full dexterity of human hands to manipulate them. To understand, model, and synthesize such interactions,
-automatic and robust methods that reconstruct hands and articulated objects in 3D from a color image are needed. Existing
-methods for estimating 3D hand and object pose from images focus on rigid objects. In part, because such methods rely on
-training data and no dataset of articulated object manipulation exists. Consequently, we introduce ARCTIC – the first dataset
-of free-form interactions of hands and articulated objects. ARCTIC has 1.2M images paired with accurate 3D meshes for
-both hands and for objects that move and deform over time. The dataset also provides hand-object contact information.
-To show the value of our dataset, we perform two novel tasks on ARCTIC: (1) 3D reconstruction of two hands and an articulated
-object in interaction; (2) an estimation of dense hand-object relative distances, which we call interaction field estimation.
-For the first task, we present ArcticNet, a baseline method for the task of jointly reconstructing two hands and an articulated object
-from an RGB image. For interaction field estimation, we predict the relative distances from each hand vertex to the object surface,
-and vice versa. We introduce InterField, the first method that estimates such distances from a single RGB image. We provide
-qualitative and quantitative experiments for both tasks, and provide detailed analysis on the data.&lt;/p&gt;
-&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
-&lt;div style=&#34;text-align:center;&#34;&gt;
-&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;!--
-# Data and Code
-
-Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
-
-
-
-# Citation
-
-```
-
-```
 --&gt;
 </description>
     </item>
