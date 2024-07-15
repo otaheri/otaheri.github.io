@@ -1,0 +1,82 @@
+---
+title: "Human Leg Motion Tracking by Fusing IMUs and RGB Camera Data Using Extended Kalman Filter"
+toc: true
+
+# Author notes (optional)
+# (author_notes:)
+# (  - 'Equal contribution')
+# (  - 'Equal contribution')
+
+date: '2019-07-01T00:00:00Z'
+doi: ''
+view: 2
+# Schedule page publish date (NOT publication's date).
+publishDate: '2019-07-01T00:00:00Z'
+
+# Publication type.
+# Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
+# 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
+# 7 = Thesis; 8 = Patent
+publication_types: ['3']
+
+# Publication name and optional abbreviated publication name.
+
+# publication: In *Conference on Computer Vision and Pattern Recognition 2022*
+# publication_short: In *CVPR2022*
+
+
+image:
+  placement: 1
+  caption: 'Teaser'
+
+tags: []
+authors: ["otaheri", "Hassan Salarieh", "Aria Alasty"]
+
+
+url_pdf: 'https://arxiv.org/ftp/arxiv/papers/2011/2011.00574.pdf'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+  
+---
+
+# Abstract
+
+Human motion capture is frequently used to study rehabilitation and clinical problems, as well
+as to provide realistic animation for the entertainment industry. IMU-based systems, as well as Markerbased
+motion tracking systems, are most popular methods to track movement due to their low cost of
+implementation and lightweight. This paper proposes a quaternion-based Extended Kalman filter
+approach to recover the human leg segments motions with a set of IMU sensors data fused with
+cameramarker system data. In this paper, an Extended Kalman Filter approach is developed to fuse the data of
+two IMUs and one RGB camera for human leg motion tracking. Based on the complementary properties
+of the inertial sensors and camera-marker system, in the introduced new measurement model, the
+orientation data of the upper leg and the lower leg is updated through three measurement equations. The
+positioning of the human body is made possible by the tracked position of the pelvis joint by the camera
+marker system. A mathematical model has been utilized to estimate joints’ depth in 2D images. The
+efficiency of the proposed algorithm is evaluated by an optical motion tracker system.
+
+<!--
+# Video
+
+<div style="text-align:center;">
+<iframe src="https://download.is.tue.mpg.de/arctic/video.mp4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+-->

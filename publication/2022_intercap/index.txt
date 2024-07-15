@@ -1,0 +1,99 @@
+---
+title: "InterCap: Joint Markerless 3D Tracking of
+Humans and Objects in Interaction"
+toc: true
+
+# Author notes (optional)
+# (author_notes:)
+# (  - 'Equal contribution')
+# (  - 'Equal contribution')
+
+date: '2022-07-01T00:00:00Z'
+doi: ''
+view: 2
+# Schedule page publish date (NOT publication's date).
+publishDate: '2022-05-01T00:00:00Z'
+
+# Publication type.
+# Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
+# 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
+# 7 = Thesis; 8 = Patent
+publication_types: ['1']
+
+# Publication name and optional abbreviated publication name.
+publication: In *German Conference on Pattern Recognition 2022*
+publication_short: In *GCPR2022*
+
+
+image:
+  placement: 1
+  caption: ''
+
+tags: []
+authors: ["Yinghao Huang", "otaheri", "Michael J. Black", "Dimitrios Tzionas"]
+
+
+url_pdf: 'https://intercap.is.tue.mpg.de/media/upload/main.pdf'
+url_code: 'https://github.com/YinghaoHuang91/InterCap/tree/master'
+url_dataset: 'https://intercap.is.tue.mpg.de/download.php'
+url_poster: 'https://intercap.is.tue.mpg.de/media/upload/poster.pdf'
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: 'https://youtu.be/d5wHLDIqN6c'
+
+
+# publication: "*Addiction*"
+links:
+  - icon_pack: fas
+    icon: file
+    name: GCPR2022
+    url: '/publication/2022_intercap/'
+  - icon_pack: fas
+    icon: scroll
+    name: Conference
+    url: '/publication/2022_intercap/'
+  
+---
+
+# Abstract
+
+Humans constantly interact with daily objects to accomplish tasks. To understand such interactions, computers need to 
+reconstruct these from cameras observing whole-body interaction with scenes. This is challenging due to occlusion between
+the body and objects, motion blur, depth/scale ambiguities, and the low image resolution of hands and graspable object parts.
+To make the problem tractable, the community focuses either on interacting hands, ignoring the body, or on interacting bodies,
+ignoring hands. The GRAB dataset addresses dexterous whole-body interaction but uses marker-based MoCap and lacks images,
+while BEHAVE captures video of body object interaction but lacks hand detail. We address the limitations of prior work with
+InterCap, a novel method that reconstructs interacting whole-bodies and objects from multi-view RGB-D data, using the 
+parametric whole-body model SMPL-X and known object meshes. To tackle the above challenges, InterCap uses two key observations:
+(i) Contact between the hand and object can be used to improve the pose estimation of both. (ii) Azure Kinect sensors 
+allow us to set up a simple multi-view RGB-D capture system that minimizes the effect of occlusion while providing 
+reasonable inter-camera synchronization. With this method we capture the InterCap dataset, which contains 10 subjects 
+(5 males and 5 females) interacting with 10 objects of various sizes and affordances, including contact with the hands
+or feet. In total, InterCap has 223 RGB-D videos, resulting in 67,357 multi-view frames, each containing 6 RGB-D images.
+Our method provides pseudo ground-truth body meshes and objects for each video frame. Our InterCap method and dataset
+fill an important gap in the literature and support many research directions. Our data and code are available for research purposes.
+
+# Video
+{{< youtube  d5wHLDIqN6c>}}
+
+# Data
+
+Please register and accept the License agreement on [InterCap](https://intercap.is.tue.mpg.de) website in order to get access to the dataset. 
+
+
+
+# Citation
+
+```
+@inproceedings{huang2022intercap,
+    title        = {{InterCap}: {J}oint Markerless {3D} Tracking of Humans and Objects in Interaction},
+    author       = {Huang, Yinghao and Taheri, Omid and Black, Michael J. and Tzionas, Dimitrios},
+    booktitle    = {{German Conference on Pattern Recognition (GCPR)}},
+    volume       = {13485},
+    pages        = {281--299},
+    year         = {2022}, 
+    organization = {Springer},
+    series       = {Lecture Notes in Computer Science}
+}
+```
