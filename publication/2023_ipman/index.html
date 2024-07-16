@@ -874,14 +874,8 @@
 
 
   
-    
-  
 
 
-
-<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2303.18246" target="_blank" rel="noopener">
-  PDF
-</a>
 
 
 
@@ -894,23 +888,11 @@
 
 
 
-<a class="btn btn-outline-primary btn-page-header" href="https://ipman.is.tue.mpg.de/" target="_blank" rel="noopener">
-  Project
-</a>
 
 
 
 
 
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://download.is.tue.mpg.de/ipman/video.mp4" target="_blank" rel="noopener">
-  Video
-</a>
 
 
 
@@ -925,12 +907,9 @@
   
   
     
-    
-      
-    
   
-  <a class="btn btn-outline-primary btn-page-header" href="/publication/2023_ipman/" >
-    <i class="fas fa-file mr-1"></i>CVPR2023</a>
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2303.18246" target="_blank" rel="noopener">
+    <i class="fas fa-file-pdf mr-1"></i>Paper PDF</a>
 
   
   
@@ -942,12 +921,91 @@
   
   
     
-    
-      
-    
   
-  <a class="btn btn-outline-primary btn-page-header" href="/publication/2023_ipman/" >
+  <a class="btn btn-outline-primary btn-page-header" href="https://cvpr2023.thecvf.com/" target="_blank" rel="noopener">
     <i class="fas fa-scroll mr-1"></i>Conference</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://www.youtube.com/watch?v=Dufvp_O0ziU" target="_blank" rel="noopener">
+    <i class="fas fa-video mr-1"></i>Video</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/sha2nkt/ipman-r" target="_blank" rel="noopener">
+    <i class="fab fa-github mr-1"></i>Code</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://moyo.is.tue.mpg.de/" target="_blank" rel="noopener">
+    <i class="fas fa-database mr-1"></i>Data (MoYo)</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://drive.google.com/file/d/1n8QeOI_WRqcVDUMrB-lG2NCJURhBjppG/view?usp=sharing" target="_blank" rel="noopener">
+    <i class="fas fa-image mr-1"></i>Poster</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://moyo.is.tue.mpg.de/license.html" target="_blank" rel="noopener">
+    <i class="fas fa-license mr-1"></i>License</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <a class="btn btn-outline-primary btn-page-header" href="mailto:ipman@tue.mpg.de" >
+    <i class="fas fa-envelope mr-1"></i>Contact</a>
 
 
 </div>
@@ -1005,43 +1063,23 @@
     <div class="space-below"></div>
 
     <div class="article-style"><h1 id="abstract">Abstract</h1>
-<p>The estimation of 3D human body shape and pose from images has advanced rapidly.
-While the results are often well aligned with image features in the camera view,
-the 3D pose is often physically implausible; bodies lean, float, or penetrate the floor.
-This is because most methods ignore the fact that bodies are typically supported by the scene.
-To address this, some methods exploit physics engines to enforce physical plausibility.
-Such methods, however, are not differentiable, rely on unrealistic proxy bodies, and are difficult
-to integrate into existing optimization and learning frameworks. To account for this,
-we take a different approach that exploits novel intuitive-physics (IP) terms that can be inferred
-from a 3D SMPL body interacting with the scene. Specifically, we infer biomechanically relevant
-features such as the pressure heatmap of the body on the floor, the Center of Pressure (CoP) from
-the heatmap, and the SMPL body’s Center of Mass (CoM) projected on the floor. With these, we develop IPMAN,
-to estimate a 3D body from a color image in a “stable” configuration by encouraging plausible floor
-contact and overlapping CoP and CoM. Our IP terms are intuitive, easy to implement, fast to compute,
-and can be integrated into any SMPL-based optimization or regression method; we show examples
-of both. To evaluate our method, we present MoYo, a dataset with synchronized multi-view color
-images and 3D bodies with complex poses, body-floor contact, and ground-truth CoM and pressure.
-Evaluation on MoYo, RICH and Human3.6M show that our IP terms produce more plausible results than
-the state of the art; they improve accuracy for static poses, while not hurting dynamic ones.
-Code and data will be available for research.</p>
+<p>The estimation of 3D human body shape and pose from images has advanced rapidly. While the results are often well aligned with image features in the camera view, the 3D pose is often physically implausible; bodies lean, float, or penetrate the floor. This is because most methods ignore the fact that bodies are typically supported by the scene. To address this, some methods exploit physics engines to enforce physical plausibility. Such methods, however, are not differentiable, rely on unrealistic proxy bodies, and are difficult to integrate into existing optimization and learning frameworks. To account for this, we take a different approach that exploits novel intuitive-physics (IP) terms that can be inferred from a 3D SMPL body interacting with the scene. Specifically, we infer biomechanically relevant features such as the pressure heatmap of the body on the floor, the Center of Pressure (CoP) from the heatmap, and the SMPL body’s Center of Mass (CoM) projected on the floor. With these, we develop IPMAN, to estimate a 3D body from a color image in a “stable” configuration by encouraging plausible floor contact and overlapping CoP and CoM. Our IP terms are intuitive, easy to implement, fast to compute, and can be integrated into any SMPL-based optimization or regression method; we show examples of both. To evaluate our method, we present MoYo, a dataset with synchronized multi-view color images and 3D bodies with complex poses, body-floor contact, and ground-truth CoM and pressure. Evaluation on MoYo, RICH, and Human3.6M shows that our IP terms produce more plausible results than the state of the art; they improve accuracy for static poses, while not hurting dynamic ones. Code and data will be available for research.</p>
 <h1 id="video">Video</h1>
 <div style="text-align:center;">
-<iframe src="https://download.is.tue.mpg.de/arctic/video.mp4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/Dufvp_O0ziU" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<!--
-# Data and Code
-
-Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
-
-
-
-# Citation
-
-```
-
-```
--->
-</div>
+<h1 id="data-and-code">Data and Code</h1>
+<p>Please register and accept the License agreement on the <a href="https://moyo.is.tue.mpg.de" target="_blank" rel="noopener">MoYo</a> website in order to get access to the dataset.</p>
+<h1 id="citation">Citation</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@inproceedings{tripathi2023ipman,
+</span></span><span class="line"><span class="cl">    title = {{3D} Human Pose Estimation via Intuitive Physics},
+</span></span><span class="line"><span class="cl">    author = {Tripathi, Shashank and M{\&#34;u}ller, Lea and Huang, Chun-Hao P. and Taheri Omid and Black, Michael J. and Tzionas, Dimitrios},
+</span></span><span class="line"><span class="cl">    booktitle = {Conference on Computer Vision and Pattern Recognition ({CVPR})},
+</span></span><span class="line"><span class="cl">    pages = {4713--4725},
+</span></span><span class="line"><span class="cl">    year = {2023},
+</span></span><span class="line"><span class="cl">    url = {https://ipman.is.tue.mpg.de}
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></div></div>
 
     
 

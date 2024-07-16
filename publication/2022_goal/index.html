@@ -872,14 +872,8 @@
 
 
   
-    
-  
 
 
-
-<a class="btn btn-outline-primary btn-page-header" href="https://download.is.tue.mpg.de/goal/GOAL_Taheri_CVPR2022.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
 
 
 
@@ -889,46 +883,14 @@
 </a>
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GOAL" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">
-  Dataset
-</a>
 
 
 
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="/publication/2022_goal/GOAL_Poster_CVPR_final.pdf" target="_blank" rel="noopener">
-  Poster
-</a>
 
 
 
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://youtu.be/A7b8DYovDZY" target="_blank" rel="noopener">
-  Video
-</a>
 
 
 
@@ -943,12 +905,9 @@
   
   
     
-    
-      
-    
   
-  <a class="btn btn-outline-primary btn-page-header" href="/publication/2022_goal/" >
-    <i class="fas fa-file mr-1"></i>CVPR2022</a>
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2112.11454.pdf" target="_blank" rel="noopener">
+    <i class="fas fa-file-pdf mr-1"></i>Paper PDF</a>
 
   
   
@@ -960,12 +919,79 @@
   
   
     
-    
-      
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2112.11454" target="_blank" rel="noopener">
+    <i class="fas fa-scroll mr-1"></i>arXiv</a>
+
+  
+  
+  
     
   
-  <a class="btn btn-outline-primary btn-page-header" href="/publication/2022_goal/" >
-    <i class="fas fa-scroll mr-1"></i>Conference</a>
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://youtu.be/A7b8DYovDZY" target="_blank" rel="noopener">
+    <i class="fas fa-video mr-1"></i>Video</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GOAL" target="_blank" rel="noopener">
+    <i class="fab fa-github mr-1"></i>Code</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">
+    <i class="fas fa-database mr-1"></i>Dataset</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GOAL/blob/main/GOAL_Poster_CVPR_final.pdf" target="_blank" rel="noopener">
+    <i class="fas fa-image mr-1"></i>Poster</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://goal.is.tue.mpg.de/" target="_blank" rel="noopener">
+    <i class="fas fa-project-diagram mr-1"></i>Project Page</a>
 
 
 </div>
@@ -1023,30 +1049,260 @@
     <div class="space-below"></div>
 
     <div class="article-style"><h1 id="abstract">Abstract</h1>
-<p>Generating digital humans that move realistically has many applications and is widely studied, but existing methods focus
-on the major limbs of the body, ignoring the hands and head. Hands have been separately studied but the focus has been on
-generating realistic static grasps of objects. To synthesize virtual characters that interact with the world, we need to
-generate full-body motions and realistic hand grasps simultaneously. Both sub-problems are challenging on their own and,
-together, the state-space of poses is significantly larger, the scales of hand and body motions differ, and the whole-body
-posture and the hand grasp must agree, satisfy physical constraints, and be plausible. Additionally, the head is involved
-because the avatar must look at the object to interact with it. For the first time, we address the problem of generating
-full-body, hand and head motions of an avatar grasping an unknown object. As input, our method, called GOAL, takes a 3D object,
-its position, and a starting 3D body pose and shape. GOAL outputs a sequence of whole-body poses using two novel networks.
-First, GNet generates a goal whole-body grasp with a realistic body, head, arm, and hand pose, as well as hand-object contact.
-Second, MNet generates the motion between the starting and goal pose. This is challenging, as it requires the avatar to walk
-towards the object with foot-ground contact, orient the head towards it, reach out, and grasp it with a realistic hand pose
-and hand-object contact. To achieve this the networks exploit a representation that combines SMPL-X body parameters and 3D vertex offsets.
-We train and evaluate GOAL, both qualitatively and quantitatively, on the GRAB dataset. Results show that GOAL generalizes well
-to unseen objects, outperforming baselines. A perceptual study shows that GOAL’s generated motions approach the realism of GRAB’s
-ground truth. GOAL takes a step towards synthesizing realistic full-body object grasping. Our models and code are available for research.</p>
-<h1 id="video">Video</h1>
+<p>Generating digital humans that move realistically has many applications and is widely studied, but existing methods focus on the major limbs of the body, ignoring the hands and head. Hands have been separately studied but the focus has been on generating realistic static grasps of objects. To synthesize virtual characters that interact with the world, we need to generate full-body motions and realistic hand grasps simultaneously. Both sub-problems are challenging on their own and, together, the state-space of poses is significantly larger, the scales of hand and body motions differ, and the whole-body posture and the hand grasp must agree, satisfy physical constraints, and be plausible. Additionally, the head is involved because the avatar must look at the object to interact with it. For the first time, we address the problem of generating full-body, hand, and head motions of an avatar grasping an unknown object. As input, our method, called GOAL, takes a 3D object, its position, and a starting 3D body pose and shape. GOAL outputs a sequence of whole-body poses using two novel networks. First, GNet generates a goal whole-body grasp with a realistic body, head, arm, and hand pose, as well as hand-object contact. Second, MNet generates the motion between the starting and goal pose. This is challenging, as it requires the avatar to walk towards the object with foot-ground contact, orient the head towards it, reach out, and grasp it with a realistic hand pose and hand-object contact. To achieve this the networks exploit a representation that combines SMPL-X body parameters and 3D vertex offsets. We train and evaluate GOAL, both qualitatively and quantitatively, on the GRAB dataset. Results show that GOAL generalizes well to unseen objects, outperforming baselines. A perceptual study shows that GOAL’s generated motions approach the realism of GRAB’s ground truth. GOAL takes a step towards synthesizing realistic full-body object grasping. Our models and code are available for research purposes.</p>
+<h1 id="what-is-goal">What is GOAL?</h1>
+<p><strong>GOAL</strong> is a generative model that generates full-body motion of the human body that walks and grasps unseen 3D objects. GOAL consists of two main steps:</p>
+<ol>
+<li><strong>GNet</strong> generates the final grasp of the motion.</li>
+<li><strong>MNet</strong> generates the motion from the starting to the grasp frame.
+It is trained on the <a href="http://grab.is.tue.mpg.de" target="_blank" rel="noopener">GRAB</a> dataset. For more details please refer to the <a href="https://arxiv.org/abs/2112.11454" target="_blank" rel="noopener">Paper</a> or the <a href="http://goal.is.tue.mpg.de" target="_blank" rel="noopener">project website</a>.</li>
+</ol>
+<p><em>GOAL generates diverse motions to reach different goal locations around the human.</em></p>
+<h1 id="gnet">GNet</h1>
+<p>Below you can see some generated whole-body static grasps from GNet. The hand close-ups are from the same grasp, and for better visualization:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Apple</th>
+<th style="text-align:center">Binoculars</th>
+<th style="text-align:center">Toothpaste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/A7b8DYovDZY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s1_apple_rh.gif" alt="Apple" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s4_binoculars_rh.gif" alt="Binoculars" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s5_toothpaste_rh.gif" alt="Toothpaste" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+</tr>
+<tr>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s1_apple.gif" alt="Apple" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s4_binoculars.gif" alt="Binoculars" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s5_toothpaste.gif" alt="Toothpaste" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+</tr>
+</tbody>
+</table>
+<h1 id="mnet">MNet</h1>
+<p>Below you can see some generated whole-body motions that walk and grasp 3D objects using MNet:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Camera</th>
+<th style="text-align:center">Mug</th>
+<th style="text-align:center">Apple</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s2_camera_lift_motion.gif" alt="Camera" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s6_mug_drink_2_motion.gif" alt="Mug" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/s1_apple_eat_1_motion.gif" alt="Apple" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>For more details check out the YouTube video below.</p>
+<p><a href="https://www.youtube.com/watch?v=A7b8DYovDZY" target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GOAL/raw/main/images/video_teaser_play.png" alt="Video" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a></p>
 <h1 id="data-and-code">Data and Code</h1>
-<p>Please register and accept the License agreement on <a href="https://grab.is.tue.mpg.de" target="_blank" rel="noopener">GRAB</a> website in order to get access to the GRAB dataset.</p>
+<p>Please register and accept the License agreement on <a href="https://grab.is.tue.mpg.de" target="_blank" rel="noopener">GRAB</a> website to get access to the GRAB dataset.</p>
 <h1 id="citation">Citation</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@inproceedings{taheri2022goal,
 </span></span><span class="line"><span class="cl">    title = {{GOAL}: {G}enerating {4D} Whole-Body Motion for Hand-Object Grasping},

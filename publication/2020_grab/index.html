@@ -362,7 +362,7 @@
   
     <meta
       property="article:published_time"
-      content="2017-01-01T00:00:00&#43;00:00"
+      content="2020-07-01T00:00:00&#43;00:00"
     />
   
   
@@ -398,7 +398,7 @@
     "https://otaheri.github.io/publication/2020_grab/featured.png"
   ],
   
-  "datePublished": "2017-01-01T00:00:00Z",
+  "datePublished": "2020-07-01T00:00:00Z",
   "dateModified": "2020-07-01T00:00:00Z",
   
   "author": {
@@ -872,14 +872,8 @@
 
 
   
-    
-  
 
 
-
-<a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2008.11200.pdf" target="_blank" rel="noopener">
-  PDF
-</a>
 
 
 
@@ -889,22 +883,6 @@
 </a>
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GRAB" target="_blank" rel="noopener">
-  Code
-</a>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">
-  Dataset
-</a>
 
 
 
@@ -914,22 +892,6 @@
 
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://youtu.be/s5syYMxmNHA" target="_blank" rel="noopener">
-  Video
-</a>
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GrabNet" target="_blank" rel="noopener">
-  Source Document
-</a>
 
 
 
@@ -943,12 +905,9 @@
   
   
     
-    
-      
-    
   
-  <a class="btn btn-outline-primary btn-page-header" href="/publication/2020_grab/" >
-    <i class="fas fa-file mr-1"></i>ECCV2020</a>
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2008.11200.pdf" target="_blank" rel="noopener">
+    <i class="fas fa-file-pdf mr-1"></i>Paper PDF</a>
 
   
   
@@ -960,12 +919,93 @@
   
   
     
-    
-      
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2008.11200" target="_blank" rel="noopener">
+    <i class="fas fa-scroll mr-1"></i>arXiv</a>
+
+  
+  
+  
     
   
-  <a class="btn btn-outline-primary btn-page-header" href="/publication/2020_grab/" >
-    <i class="fas fa-scroll mr-1"></i>Conference</a>
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://youtu.be/s5syYMxmNHA" target="_blank" rel="noopener">
+    <i class="fas fa-video mr-1"></i>Long Video</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://youtu.be/VHN0DBUB4H8" target="_blank" rel="noopener">
+    <i class="fas fa-video mr-1"></i>Short Video</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GRAB" target="_blank" rel="noopener">
+    <i class="fab fa-github mr-1"></i>Code for GRAB</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/otaheri/GrabNet" target="_blank" rel="noopener">
+    <i class="fab fa-github mr-1"></i>Code for GrabNet</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">
+    <i class="fas fa-database mr-1"></i>Dataset</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://grab.is.tue.mpg.de" target="_blank" rel="noopener">
+    <i class="fas fa-project-diagram mr-1"></i>Project Page</a>
 
 
 </div>
@@ -1023,36 +1063,388 @@
     <div class="space-below"></div>
 
     <div class="article-style"><h1 id="abstract">Abstract</h1>
-<p>Training computers to understand, model, and synthesize human grasping requires a rich dataset containing complex 3D object shapes,
-detailed contact information, hand pose and shape, and the 3D body motion over time. While &ldquo;grasping&rdquo; is commonly thought of as a
-single hand stably lifting an object, we capture the motion of the entire body and adopt the generalized notion of &ldquo;whole-body grasps&rdquo;.
-Thus, we collect a new dataset, called GRAB (GRasping Actions with Bodies), of whole-body grasps, containing full 3D shape and pose sequences of
-10 subjects interacting with 51 everyday objects of varying shape and size. Given MoCap markers, we fit the full 3D body shape and pose,
-including the articulated face and hands, as well as the 3D object pose. This gives detailed 3D meshes over time, from which we compute
-contact between the body and object. This is a unique dataset, that goes well beyond existing ones for modeling and understanding how
-humans grasp and manipulate objects, how their full body is involved, and how interaction varies with the task.
-We illustrate the practical value of GRAB with an example application; we train GrabNet, a conditional generative network,
-to predict 3D hand grasps for unseen 3D object shapes.</p>
+<p>Training computers to understand, model, and synthesize human grasping requires a rich dataset containing complex 3D object shapes, detailed contact information, hand pose and shape, and the 3D body motion over time. While &ldquo;grasping&rdquo; is commonly thought of as a single hand stably lifting an object, we capture the motion of the entire body and adopt the generalized notion of &ldquo;whole-body grasps&rdquo;. Thus, we collect a new dataset, called GRAB (GRasping Actions with Bodies), of whole-body grasps, containing full 3D shape and pose sequences of 10 subjects interacting with 51 everyday objects of varying shape and size. Given MoCap markers, we fit the full 3D body shape and pose, including the articulated face and hands, as well as the 3D object pose. This gives detailed 3D meshes over time, from which we compute contact between the body and object. This is a unique dataset, that goes well beyond existing ones for modeling and understanding how humans grasp and manipulate objects, how their full body is involved, and how interaction varies with the task. We illustrate the practical value of GRAB with an example application; we train GrabNet, a conditional generative network, to predict 3D hand grasps for unseen 3D object shapes.</p>
 <h1 id="tldr">TL;DR</h1>
-<p>We capture a very accurate dataset, named GRAB, of people interacting with 3D objects. We then use it to train a network, GrabNet, that generates hand grasp for novel objects.</p>
-<h1 id="video">Video</h1>
+<p>We capture a very accurate dataset, named GRAB, of people interacting with 3D objects. We then use it to train a network, GrabNet, that generates hand grasps for novel objects.</p>
+<h1 id="grab-dataset">GRAB Dataset</h1>
+<h2 id="dataset-overview">Dataset Overview</h2>
+<p>GRAB is a dataset of full-body motions interacting and grasping 3D objects. It contains accurate finger and facial motions as well as the contact between the objects and body. The dataset includes 5 male and 5 female participants performing 4 different motion intents with 51 everyday objects.</p>
+<h3 id="example-motions">Example Motions</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Eat - Banana</th>
+<th style="text-align:center">Talk - Phone</th>
+<th style="text-align:center">Drink - Mug</th>
+<th style="text-align:center">See - Binoculars</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/s5syYMxmNHA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
 
-<h2 id="bloopers-fun-d">Bloopers (Fun :D)</h2>
-<div style="text-align:center;">
-<iframe src="https://www.youtube.com/embed/nRxRn4ZzQ60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/banana.gif" alt="Banana" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/phone.gif" alt="Phone" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/mug.gif" alt="Mug" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/binoculars.gif" alt="Binoculars" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The GRAB dataset also contains binary contact maps between the body and objects. With our interacting meshes, one could integrate these contact maps over time to create &ldquo;contact heatmaps&rdquo;, or even compute fine-grained contact annotations, as shown below:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Contact Heatmaps</th>
+<th style="text-align:center">Contact Annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/contact.png" alt="contact" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/contact1.png" alt="contact1" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dataset-videos">Dataset Videos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Long Video</th>
+<th style="text-align:center">Short Video</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://youtu.be/s5syYMxmNHA" target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/long.png" alt="LongVideo" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a></td>
+<td style="text-align:center"><a href="https://youtu.be/VHN0DBUB4H8" target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/short.png" alt="ShortVideo" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="grabnet">GrabNet</h1>
+<h2 id="overview">Overview</h2>
+<p>GrabNet is a generative model for 3D hand grasps. Given a 3D object mesh, GrabNet can predict several hand grasps for it. GrabNet has two successive models, CoarseNet (cVAE) and RefineNet. It is trained on a subset (right hand and object only) of the GRAB dataset.</p>
+<h3 id="generated-results-from-grabnet">Generated Results from GrabNet</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Binoculars</th>
+<th style="text-align:center">Mug</th>
+<th style="text-align:center">Camera</th>
+<th style="text-align:center">Toothpaste</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GrabNet/raw/master/images/binoculars.gif" alt="Binoculars" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GrabNet/raw/master/images/mug.gif" alt="Mug" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GrabNet/raw/master/images/camera.gif" alt="Camera" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+<td style="text-align:center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GrabNet/raw/master/images/toothpaste.gif" alt="Toothpaste" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</td>
+</tr>
+</tbody>
+</table>
+<h3 id="grabnet-videos">GrabNet Videos</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Long Video</th>
+<th style="text-align:center">Short Video</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://youtu.be/s5syYMxmNHA" target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/long.png" alt="LongVideo" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a></td>
+<td style="text-align:center"><a href="https://youtu.be/VHN0DBUB4H8" target="_blank" rel="noopener">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  >
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="https://github.com/otaheri/GRAB/raw/master/images/short.png" alt="ShortVideo" loading="lazy" data-zoomable /></div>
+  </div></figure>
+</a></td>
+</tr>
+</tbody>
+</table>
 <h1 id="data-and-code">Data and Code</h1>
 <p>Please register and accept the License agreement on <a href="https://grab.is.tue.mpg.de" target="_blank" rel="noopener">this</a> website in order to get access to the GRAB dataset. The license and downloads section include explicit restrictions per subject, to which you agree to comply with.</p>
 <p>When creating an account, please opt-in for email communication, so that we can reach out to you per email to announce potential significant updates.</p>
-<p>GRAB dataset (works only after sign-in)
-GrabNet data(works only after sign-in)
-GrabNet model files/weights (works only after sign-in)
-Code for GRAB (GitHub)
-Code for GrabNet(GitHub)</p>
+<ul>
+<li><a href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">GRAB dataset (works only after sign-in)</a></li>
+<li><a href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">GrabNet data (works only after sign-in)</a></li>
+<li><a href="https://grab.is.tue.mpg.de/download.php" target="_blank" rel="noopener">GrabNet model files/weights (works only after sign-in)</a></li>
+<li><a href="https://github.com/otaheri/GRAB" target="_blank" rel="noopener">Code for GRAB (GitHub)</a></li>
+<li><a href="https://github.com/otaheri/GrabNet" target="_blank" rel="noopener">Code for GrabNet (GitHub)</a></li>
+</ul>
 <h1 id="citation">Citation</h1>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@inproceedings{GRAB:2020,
 </span></span><span class="line"><span class="cl">  title = {{GRAB}: A Dataset of Whole-Body Human Grasping of Objects},
