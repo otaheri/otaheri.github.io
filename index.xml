@@ -5,12 +5,333 @@
     <link>https://otaheri.github.io/</link>
       <atom:link href="https://otaheri.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Omid Taheri</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
       <title>Omid Taheri</title>
       <link>https://otaheri.github.io/</link>
     </image>
+    
+    <item>
+      <title>HUMOS: Human Motion Model Conditioned on Body Shape</title>
+      <link>https://otaheri.github.io/publication/2024_humos/</link>
+      <pubDate>Mon, 15 Jul 2024 12:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2024_humos/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Generating realistic human motion is crucial for many computer vision and graphics applications. The rich diversity of human body shapes and sizes significantly influences how people move. However, existing motion models typically overlook these differences, using a normalized, average body instead. This results in a homogenization of motion across human bodies, with motions not aligning with their physical attributes, thus limiting diversity. To address this, we propose a novel approach to learn a generative motion model conditioned on body shape. We demonstrate that it is possible to learn such a model from unpaired training data using cycle consistency, intuitive physics, and stability constraints that model the correlation between identity and movement.&lt;/p&gt;
+&lt;p&gt;The resulting model, HUMOS, generates natural, physically plausible, and dynamically stable human motions conditioned on body shape. More details are available on our &lt;a href=&#34;https://github.com/CarstenEpic/humos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;*Work done during an internship at Epic Games&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Internship Opportunity in Our Research Group</title>
+      <link>https://otaheri.github.io/positions/ps_intern_videogen/</link>
+      <pubDate>Mon, 15 Jul 2024 12:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/positions/ps_intern_videogen/</guid>
+      <description>&lt;!-- ## Internship Opportunity --&gt;
+&lt;p&gt;We are currently seeking passionate and dedicated interns to join our esteemed research group. This is a unique opportunity to work on pioneering research projects and gain invaluable experience in cutting-edge technologies.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Areas of Research:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Human Motion Synthesis&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Object Interaction&lt;/li&gt;
+&lt;li&gt;Scene Interaction&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Reconstruction from Videos/Images&lt;/strong&gt;:
+&lt;ul&gt;
+&lt;li&gt;Humand and Objects&lt;/li&gt;
+&lt;li&gt;Using Video Datasets for 3D Synthesis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Video/3D Generation&lt;/strong&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3D Representations&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Collecting Rich Datasets&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;LLMs for Above Topics&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We are looking for candidates who have experience and a strong interest in these areas, preferably with papers in top-tier conferences such as CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, and others.&lt;/p&gt;
+&lt;p&gt;This is an excellent opportunity to collaborate with leading experts and contribute to groundbreaking research. If you are interested, please &lt;a href=&#34;mailto:omid.taheri@tue.mpg.de&#34;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- ![Internship](path/to/your/image.jpg) Replace with the actual path to the image --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Finally it&#39;s Dr. Me! - PhD Defense Completed!</title>
+      <link>https://otaheri.github.io/news/phd_finished/phd-finished/</link>
+      <pubDate>Thu, 04 Jul 2024 12:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/news/phd_finished/phd-finished/</guid>
+      <description>&lt;p&gt;I have successfully defended my PhD thesis on July 4th, 2024. It was an incredible journey, and I am grateful for the support and guidance from my advisors, committee members, and colleagues.&lt;/p&gt;
+&lt;!-- The committee highly complimented my presentation slides, which were meticulously crafted to convey the essence of my research effectively. --&gt;
+&lt;!-- ## Photo Album --&gt;
+&lt;!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 1&#34; srcset=&#34;
+               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_087d567d65954d8e6a0a08812983a233.webp 400w,
+               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_0418bd12ccac36d07478146bf0b794c1.webp 760w,
+               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_087d567d65954d8e6a0a08812983a233.webp&#34;
+               width=&#34;466&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 2&#34; srcset=&#34;
+               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_669c5e73abe7401260c6ceee48f421dd.webp 400w,
+               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_dd049ab0862cbc2f49485d0b34c80fe3.webp 760w,
+               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_669c5e73abe7401260c6ceee48f421dd.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;428&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 3&#34; srcset=&#34;
+               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_ba1f63c5ba5146c6e5fe2cce1119e5d7.webp 400w,
+               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_a4e1bc95bdca4d29d6ef1b6fed4181a3.webp 760w,
+               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_ba1f63c5ba5146c6e5fe2cce1119e5d7.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;428&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 4&#34; srcset=&#34;
+               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_91402f00d3a75deb76ee555c8d5e4277.webp 400w,
+               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_38d0b261a29007e5dc473f59f2eb9344.webp 760w,
+               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_91402f00d3a75deb76ee555c8d5e4277.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;428&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+ --&gt;
+&lt;!-- | ![defence2](defence2.jpg) | ![defence7](defence7.jpg) |
+|:---:|:---:|
+| ![defence9](defence9.jpg) | ![defence4](defence4.jpg) | --&gt;
+&lt;!-- ## Watch My Defense --&gt;
+&lt;div style=&#34;text-align: center; margin: 20px 0;&#34;&gt;
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/YOUR_VIDEO_ID&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;!-- ## Presentation and Slides --&gt;
+&lt;div style=&#34;text-align: center; margin: 20px 0;&#34;&gt;
+  &lt;a href=&#34;path/to/phd_defense_slides.pdf&#34; class=&#34;button&#34; style=&#34;background-color: #007BFF; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-right: 10px;&#34;&gt;View Slides&lt;/a&gt;
+  &lt;a href=&#34;path/to/thesis.pdf&#34; class=&#34;button&#34; style=&#34;background-color: #17A2B8; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;&#34;&gt;Read Thesis&lt;/a&gt;
+&lt;/div&gt;
+&lt;p&gt;I am excited to embark on the next chapter of my career and continue contributing to the field. Thank you to everyone who has supported me along this journey.&lt;/p&gt;
+&lt;p&gt;Here are some memorable moments from my PhD defense day:&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;hr&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;div class=&#34;gallery-grid&#34;&gt;
+
+  
+  
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/2.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;2.jpg&#34; width=&#34;459&#34; height=&#34;750&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/3.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/3_hu1bfa0d313c62c3c0ebb453f87ca1088b_2984619_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;3.jpg&#34; width=&#34;750&#34; height=&#34;422&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/4.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;4.jpg&#34; width=&#34;750&#34; height=&#34;422&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/5.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/5_hu0ab352c47597929766ab1623809ad0bd_3125319_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;5.jpg&#34; width=&#34;750&#34; height=&#34;422&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/6.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/6_hu75cc63507b5b1ece0ed13f95c37f055b_1033573_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;6.jpg&#34; width=&#34;750&#34; height=&#34;572&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/7.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/7_hu46529b2bea3e4e52910fefea88216f9d_2433596_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;7.jpg&#34; width=&#34;750&#34; height=&#34;422&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/8.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/8_hu4ce6e1de9be2ed64a972e622ffd2daae_1864533_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;8.jpg&#34; width=&#34;750&#34; height=&#34;563&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+    
+    
+    
+    
+    
+  
+  
+  &lt;div class=&#34;gallery-item gallery-item--medium&#34;&gt;
+    &lt;a data-fancybox=&#34;gallery-./phd_defense&#34; href=&#34;https://otaheri.github.io/media/albums/phd_defense/9.jpg&#34; &gt;
+      &lt;img src=&#34;https://otaheri.github.io/media/albums/phd_defense/9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_750x750_fit_q75_h2_lanczos.webp&#34; loading=&#34;lazy&#34; alt=&#34;9.jpg&#34; width=&#34;750&#34; height=&#34;422&#34;&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  
+
+&lt;/div&gt;
+
+</description>
+    </item>
     
     <item>
       <title>WANDR: Intention-guided Human Motion Generation</title>
@@ -1075,24 +1396,6 @@ Please register and accept the License agreement on [GRAB](https://grab.is.tue.m
 
 ```
 --&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>https://otaheri.github.io/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>https://otaheri.github.io/privacy/</guid>
-      <description>&lt;p&gt;Add your privacy policy here and set &lt;code&gt;draft: false&lt;/code&gt; to publish it. Otherwise, delete this file if you don&amp;rsquo;t need it.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Terms</title>
-      <link>https://otaheri.github.io/terms/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>https://otaheri.github.io/terms/</guid>
-      <description>&lt;p&gt;Add your terms here and set &lt;code&gt;draft: false&lt;/code&gt; to publish it. Otherwise, delete this file if you don&amp;rsquo;t need it.&lt;/p&gt;
 </description>
     </item>
     

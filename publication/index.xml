@@ -5,12 +5,24 @@
     <link>https://otaheri.github.io/publication/</link>
       <atom:link href="https://otaheri.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 12:00:00 +0000</lastBuildDate>
     <image>
       <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://otaheri.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>HUMOS: Human Motion Model Conditioned on Body Shape</title>
+      <link>https://otaheri.github.io/publication/2024_humos/</link>
+      <pubDate>Mon, 15 Jul 2024 12:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2024_humos/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Generating realistic human motion is crucial for many computer vision and graphics applications. The rich diversity of human body shapes and sizes significantly influences how people move. However, existing motion models typically overlook these differences, using a normalized, average body instead. This results in a homogenization of motion across human bodies, with motions not aligning with their physical attributes, thus limiting diversity. To address this, we propose a novel approach to learn a generative motion model conditioned on body shape. We demonstrate that it is possible to learn such a model from unpaired training data using cycle consistency, intuitive physics, and stability constraints that model the correlation between identity and movement.&lt;/p&gt;
+&lt;p&gt;The resulting model, HUMOS, generates natural, physically plausible, and dynamically stable human motions conditioned on body shape. More details are available on our &lt;a href=&#34;https://github.com/CarstenEpic/humos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;*Work done during an internship at Epic Games&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>WANDR: Intention-guided Human Motion Generation</title>
