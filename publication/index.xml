@@ -122,9 +122,9 @@
     
     <item>
       <title>GRIP: Generating Interaction Poses Using Spatial Cues and Latent Consistency</title>
-      <link>https://otaheri.github.io/publication/2023_grip/</link>
+      <link>https://otaheri.github.io/publication/2024_grip/</link>
       <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/publication/2023_grip/</guid>
+      <guid>https://otaheri.github.io/publication/2024_grip/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
 &lt;p&gt;Hands are dexterous and highly versatile manipulators that are central to how humans interact with objects and their environment. Consequently, modeling realistic hand-object interactions, including the subtle motion of individual fingers, is critical for applications in computer graphics, computer vision, and mixed reality. Prior work on capturing and modeling humans interacting with objects in 3D focuses on the body and object motion, often ignoring hand pose. In contrast, we introduce GRIP, a learning-based method that takes, as input, the 3D motion of the body and the object, and synthesizes realistic motion for both hands before, during, and after object interaction. As a preliminary step before synthesizing the hand motion, we first use a network, ANet, to denoise the arm motion. Then, we leverage the spatio-temporal relationship between the body and the object to extract novel temporal interaction cues, and use them in a two-stage inference pipeline to generate the hand motion. In the first stage, we introduce a new approach to encourage motion temporal consistency in the latent space (LTC) and generate consistent interaction motions. In the second stage, GRIP generates refined hand poses to avoid hand-object penetrations. Given sequences of noisy body and object motion, GRIP “upgrades” them to include hand-object interaction. Quantitative experiments and perceptual studies demonstrate that GRIP outperforms baseline methods and generalizes to unseen objects and motions from different motion-capture datasets. Our models and code are available for research purposes at &lt;a href=&#34;https://grip.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GRIP&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
