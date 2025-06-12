@@ -139,7 +139,101 @@ For licensing: &lt;a href=&#34;mailto:ps-licensing@tue.mpg.de&#34;&gt;ps-licensi
     </item>
     
     <item>
-      <title>A Versatile and Differentiable Hand-Object Interaction Representation</title>
+      <title>NIL: No-data Imitation Learning by Leveraging Pre-trained Video Diffusion Models</title>
+      <link>https://otaheri.github.io/publication/2025_nil/</link>
+      <pubDate>Thu, 13 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2025_nil/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Acquiring physically plausible motor skills across diverse and unconventional morphologies—from humanoids to ants—is crucial for robotics and simulation.&lt;br&gt;
+We introduce &lt;strong&gt;No-data Imitation Learning (NIL)&lt;/strong&gt;, which:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Generates&lt;/strong&gt; a reference video with a pretrained video diffusion model from a single simulation frame + text prompt.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Learns&lt;/strong&gt; a policy in simulation by comparing rendered agent videos against the generated reference via video-encoder embeddings and segmentation-mask IoU.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;NIL matches or outperforms baselines trained on real motion‐capture data, effectively replacing expensive data collection with generative video priors.&lt;/p&gt;
+&lt;h1 id=&#34;teaser&#34;&gt;Teaser&lt;/h1&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;featured.jpg&#34; class=&#34;center&#34; alt=&#34;NIL overview figure&#34; /&gt;
+&lt;/p&gt;
+&lt;div style=&#34;text-align:center; margin-top:10px;&#34;&gt;
+  &lt;strong&gt;NIL&lt;/strong&gt; generates expert videos on-the-fly via a pretrained video diffusion model  
+  and then trains policies purely from those generated 2D videos—no human data required.
+&lt;/div&gt;
+&lt;h1 id=&#34;nil-overview&#34;&gt;NIL Overview&lt;/h1&gt;
+&lt;p align=&#34;center&#34;&gt;
+  &lt;img src=&#34;videos/method_overview.png&#34; class=&#34;center&#34; alt=&#34;Method overview diagram&#34; /&gt;
+&lt;/p&gt;
+&lt;div style=&#34;text-align:center; margin-top:10px;&#34;&gt;
+  **Stage 1:** Generate reference video Fᵢⱼ with diffusion model D from initial frame e₀ and prompt pᵢⱼ.&lt;br&gt;
+  **Stage 2:** Train policy πᵢⱼ in physics simulator to imitate Fᵢⱼ using (1) video‐encoder similarity, (2) segmentation IoU, (3) smoothness regularization.
+&lt;/div&gt;
+&lt;h1 id=&#34;experiments&#34;&gt;Experiments&lt;/h1&gt;
+&lt;p&gt;We validate NIL on locomotion tasks for multiple morphologies (humanoids, quadrupeds, animals).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reward components:&lt;/strong&gt; ablation of video vs. mask vs. reg.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Policy performance:&lt;/strong&gt; matches or exceeds motion-capture-trained baselines.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generalization:&lt;/strong&gt; works zero-shot on unseen morphologies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;bibtex&#34;&gt;BibTeX&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@article&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;albaba2025nil&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{NIL: No-data Imitation Learning by Leveraging Pre-trained Video Diffusion Models}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Albaba, Mert and Li, Chenhao and Diomataris, Markos and Taheri, Omid and Krause, Andreas and Black, Michael}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;journal&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{arXiv}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>HaPTIC: Predicting 4D Hand Trajectory from Monocular Videos</title>
+      <link>https://otaheri.github.io/publication/2025_haptic/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2025_haptic/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;We present &lt;em&gt;HaPTIC&lt;/em&gt;, an approach that infers coherent 4D hand trajectories from monocular videos. Current video-based hand pose reconstruction methods primarily focus on improving frame-wise 3D pose using adjacent frames rather than studying consistent 4D hand trajectories in space. Despite the additional temporal cues, they generally underperform compared to image-based methods due to the scarcity of annotated video data. To address these issues, we repurpose a state-of-the-art image-based transformer to take in multiple frames and directly predict a coherent trajectory. We introduce two types of lightweight attention layers: cross-view self-attention to fuse temporal information, and global cross-attention to bring in larger spatial context. Our method infers 4D hand trajectories similar to the ground truth while maintaining strong 2D reprojection alignment. We apply the method to both egocentric and allocentric videos. It significantly outperforms existing methods in global trajectory accuracy while being comparable to the state-of-the-art in single-image pose estimation.&lt;/p&gt;
+&lt;h1 id=&#34;teaser&#34;&gt;Teaser&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;video playsinline controls autoplay muted loop style=&#34;width: 100%; display: block;&#34;&gt;
+    &lt;source src=&#34;videos/teaser_blank.m4v&#34; type=&#34;video/mp4&#34;&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;method-overview&#34;&gt;Method Overview&lt;/h1&gt;
+&lt;img src=&#34;videos/method.png&#34; class=&#34;center&#34; alt=&#34;HaPTIC Method Overview&#34; /&gt;
+&lt;p&gt;&lt;strong&gt;Overall pipeline (left)&lt;/strong&gt;: HaPTIC extends HaMeR by predicting both per-frame MANO parameters and a global 4D trajectory via a shared transformer.&lt;br&gt;
+&lt;strong&gt;Inside one image tower (right)&lt;/strong&gt;: We inject cross-view self-attention to fuse temporal frames and global cross-attention for spatial context.&lt;/p&gt;
+&lt;h1 id=&#34;comparison-with-baselines&#34;&gt;Comparison with Baselines&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;video controls autoplay muted loop width=&#34;100%&#34;&gt;
+    &lt;source src=&#34;videos/compare.m4v&#34; type=&#34;video/mp4&#34;&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;p&gt;The de-facto “lifting” methods suffer from jitter; metric‐depth estimators struggle under occlusion; whole-body models fail when large parts of the hand are out of view. HaPTIC delivers smooth, globally-consistent trajectories while matching 2D reprojection quality.&lt;/p&gt;
+&lt;h1 id=&#34;test-time-optimization&#34;&gt;Test-Time Optimization&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;video controls autoplay muted loop width=&#34;100%&#34;&gt;
+    &lt;source src=&#34;videos/opt_crop.m4v&#34; type=&#34;video/mp4&#34;&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;p&gt;Can a simple test-time refinement smooth out jagged feed-forward predictions? We find that while optimization can reduce local jitter, it’s much less effective at correcting global drift—HaPTIC provides a superior initialization.&lt;/p&gt;
+&lt;h1 id=&#34;more-results&#34;&gt;More Results&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;video controls autoplay muted loop width=&#34;100%&#34;&gt;
+    &lt;source src=&#34;videos/itw.m4v&#34; type=&#34;video/mp4&#34;&gt;
+  &lt;/video&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;bibtex&#34;&gt;BibTeX&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@article&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;ye2025predicting&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Ye, Yufei and Feng, Yao and Taheri, Omid and Feng, Haiwen and Tulsiani, Shubham and Black, Michael J.}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Predicting 4D Hand Trajectory from Monocular Videos}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;journal&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{arXiv preprint arXiv:2501.08329}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;doi&lt;/span&gt;       &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{10.48550/arXiv.2501.08329}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>CHOIR: A Versatile and Differentiable Hand-Object Interaction Representation</title>
       <link>https://otaheri.github.io/publication/2025_choir/</link>
       <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://otaheri.github.io/publication/2025_choir/</guid>
@@ -257,7 +351,7 @@ JointDiffusion+CHOIR outperforms SOTA on refinement and synthesis benchmarks.&lt
     </item>
     
     <item>
-      <title>3D Whole-Body Grasp Synthesis with Directional Controllability</title>
+      <title>CWGrasp: 3D Whole-Body Grasp Synthesis with Directional Controllability</title>
       <link>https://otaheri.github.io/publication/2025_cwgrasp/</link>
       <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
       <guid>https://otaheri.github.io/publication/2025_cwgrasp/</guid>
