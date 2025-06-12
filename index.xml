@@ -5,12 +5,138 @@
     <link>https://otaheri.github.io/</link>
       <atom:link href="https://otaheri.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Omid Taheri</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 12:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
       <title>Omid Taheri</title>
       <link>https://otaheri.github.io/</link>
     </image>
+    
+    <item>
+      <title>InteractVLM: 3D Interaction Reasoning from 2D Foundational Models</title>
+      <link>https://otaheri.github.io/publication/2025_intervlm/</link>
+      <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2025_intervlm/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;We introduce &lt;strong&gt;InteractVLM&lt;/strong&gt;, a novel method to estimate 3D contact points on human bodies and objects from single in-the-wild images, enabling accurate human-object joint reconstruction in 3D. This is challenging due to occlusions, depth ambiguities, and widely varying object shapes. Existing methods rely on 3D contact annotations collected via expensive motion-capture systems or tedious manual labeling, limiting scalability and generalization. To overcome this, InteractVLM harnesses the visual knowledge of large Vision-Language Models (VLMs), fine-tuned with limited 3D contact data. We propose a &lt;strong&gt;Render-Localize-Lift&lt;/strong&gt; module that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Render:&lt;/strong&gt; Embeds 3D body and object surfaces into 2D space via multi-view rendering.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Localize:&lt;/strong&gt; Trains a multi-view localization model (MV-Loc) to infer precise 2D contact points.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lift:&lt;/strong&gt; Projects the localized 2D contacts back to the 3D mesh.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additionally, we define a new task—&lt;strong&gt;Semantic Human Contact&lt;/strong&gt;—which conditions contact estimation on object semantics, going beyond binary labels to infer object-specific interaction regions. InteractVLM significantly outperforms prior art on contact estimation benchmarks and facilitates joint 3D reconstruction from a single image.&lt;/p&gt;
+&lt;h1 id=&#34;teaser&#34;&gt;Teaser&lt;/h1&gt;
+&lt;img src=&#34;videos/teaser.jpg&#34; class=&#34;center&#34; /&gt;
+&lt;div style=&#34;text-align:center; margin-top:10px;&#34;&gt;
+  &lt;span style=&#34;color:#007acc; font-weight:bold;&#34;&gt;InteractVLM&lt;/span&gt; estimates 3D contact points on both human bodies and objects from single in-the-wild images, enabling accurate human-object joint reconstruction in 3D.
+  We introduce **Semantic Human Contact**, inferring object-specific contacts on the body, and leverage large Vision-Language Models for better generalization to diverse real-world interactions.
+&lt;/div&gt;
+&lt;h1 id=&#34;joint-humanobject-reconstruction&#34;&gt;Joint Human–Object Reconstruction&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Accurate joint 3D reconstruction of human and object from a single image.&lt;/strong&gt;&lt;/p&gt;
+&lt;video autoplay muted loop playsinline height=&#34;300&#34;&gt;
+  &lt;source src=&#34;videos/joint_reconstruction.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;h1 id=&#34;method-overview&#34;&gt;Method Overview&lt;/h1&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Method Overview&#34; srcset=&#34;
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_81607cd6eb15fe4e64e1cd1ab0502830.webp 400w,
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_c9b9ef44694fd392450ca1e4c4c08842.webp 760w,
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_81607cd6eb15fe4e64e1cd1ab0502830.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;308&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;comparison-interactvlm-vs-phosa&#34;&gt;Comparison: InteractVLM vs. PHOSA&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Joint Reconstruction Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/bench.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;Input Image&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/bench_phosa.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;PHOSA&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/bench_ivlm.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;InteractVLM&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;semantic-human-contact-estimation&#34;&gt;Semantic Human Contact Estimation&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Contact Estimation Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/hcontact_bench.jpg&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;Input Image&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/hcontact_bench_deco.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;DECO&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/hcontact_bench_ivlm.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;InteractVLM&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;object-affordance-prediction&#34;&gt;Object Affordance Prediction&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Affordance Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/ocontact_img1.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;Input Image&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/ocontact_img1_piad.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;PIAD&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/ocontact_img1_ivlm.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;InteractVLM&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;summary-video&#34;&gt;Summary Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34;
+    src=&#34;https://www.youtube.com/embed/brxygxM1nRk&#34;
+    frameborder=&#34;0&#34;
+    allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34;
+    allowfullscreen&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;acknowledgments--disclosure&#34;&gt;Acknowledgments &amp;amp; Disclosure&lt;/h1&gt;
+&lt;p&gt;We thank Alpár Cseke for assistance with joint reconstruction evaluation; Tsvetelina Alexiadis and Taylor Obersat for MTurk studies; Yao Feng, Peter Kulits, Markos Diomataris for feedback; and Benjamin Pellkofer for IT support. SKD is funded by IMPRS-IS; UvA work by ERC Starting Grant STRIPES (101165317). DT received Google research funding. MJB’s involvement was solely supported by the Max Planck Society.&lt;/p&gt;
+&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;
+&lt;p&gt;For technical questions: &lt;a href=&#34;mailto:sai.dwivedi@tue.mpg.de&#34;&gt;sai.dwivedi@tue.mpg.de&lt;/a&gt;&lt;br&gt;
+For licensing: &lt;a href=&#34;mailto:ps-licensing@tue.mpg.de&#34;&gt;ps-licensing@tue.mpg.de&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;bibtex&#34;&gt;BibTeX&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@inproceedings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;dwivedi_interactvlm_2025&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{{InteractVLM}: {3D} Interaction Reasoning from {2D} Foundational Models}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Dwivedi, Sai Kumar and Antić, Dimitrije and Tripathi, Shashank and Taheri, Omid and Schmid, Cordelia and Black, Michael J. and Tzionas, Dimitrios}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;booktitle&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;month&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{June}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     
     <item>
       <title>HUMOS: Human Motion Model Conditioned on Body Shape</title>
@@ -86,10 +212,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 1&#34; srcset=&#34;
-               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_31c3236b9a25892d82cf83a5da37e8de.webp 400w,
-               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_5d84538101937adadb9c5c1d306d858e.webp 760w,
+               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_087d567d65954d8e6a0a08812983a233.webp 400w,
+               /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_0418bd12ccac36d07478146bf0b794c1.webp 760w,
                /media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_31c3236b9a25892d82cf83a5da37e8de.webp&#34;
+               src=&#34;https://otaheri.github.io/media/defence2_hue0f65e555f4d1dbd84579eed36edf79a_2268970_087d567d65954d8e6a0a08812983a233.webp&#34;
                width=&#34;466&#34;
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -116,10 +242,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 2&#34; srcset=&#34;
-               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_6f8b619ca7366e17bc22f0d3ee8c27c4.webp 400w,
-               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_4d5f0dad3a38fd7fc78fe809f450802d.webp 760w,
+               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_669c5e73abe7401260c6ceee48f421dd.webp 400w,
+               /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_dd049ab0862cbc2f49485d0b34c80fe3.webp 760w,
                /media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_6f8b619ca7366e17bc22f0d3ee8c27c4.webp&#34;
+               src=&#34;https://otaheri.github.io/media/defence7_hu46529b2bea3e4e52910fefea88216f9d_2433596_669c5e73abe7401260c6ceee48f421dd.webp&#34;
                width=&#34;760&#34;
                height=&#34;428&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -146,10 +272,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 3&#34; srcset=&#34;
-               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_80eef77ad426bd8852a323a2fb3aa46a.webp 400w,
-               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_f5a461dc8992caa36d561f344f80e98f.webp 760w,
+               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_ba1f63c5ba5146c6e5fe2cce1119e5d7.webp 400w,
+               /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_a4e1bc95bdca4d29d6ef1b6fed4181a3.webp 760w,
                /media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_80eef77ad426bd8852a323a2fb3aa46a.webp&#34;
+               src=&#34;https://otaheri.github.io/media/defence9_hu63ca05ccf36c2a7edb2bda2ed86596be_2323404_ba1f63c5ba5146c6e5fe2cce1119e5d7.webp&#34;
                width=&#34;760&#34;
                height=&#34;428&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -176,10 +302,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Photo 4&#34; srcset=&#34;
-               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_01f11f778044db18cade281f71051fa3.webp 400w,
-               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_f408b7bc48cffa1b04be5085e3f42aa1.webp 760w,
+               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_91402f00d3a75deb76ee555c8d5e4277.webp 400w,
+               /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_38d0b261a29007e5dc473f59f2eb9344.webp 760w,
                /media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_1200x1200_fit_q75_h2_lanczos.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_01f11f778044db18cade281f71051fa3.webp&#34;
+               src=&#34;https://otaheri.github.io/media/defence4_hu4f9d416e2a6acf1a9dadbe06f75ae783_2581414_91402f00d3a75deb76ee555c8d5e4277.webp&#34;
                width=&#34;760&#34;
                height=&#34;428&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -376,10 +502,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Method&#34; srcset=&#34;
-               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_49d444ef9c309a759cf8d6efbf963403.webp 400w,
-               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_7afe326129f5b23a5b4d39a59a00e73a.webp 760w,
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_6648189e2130824ce8be7d8a06e44028.webp 400w,
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_e80f1315be66dc761e2a20742cd211a8.webp 760w,
                /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_49d444ef9c309a759cf8d6efbf963403.webp&#34;
+               src=&#34;https://otaheri.github.io/publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_6648189e2130824ce8be7d8a06e44028.webp&#34;
                width=&#34;760&#34;
                height=&#34;259&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
