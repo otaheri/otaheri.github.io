@@ -1,0 +1,18 @@
+{
+  "name": "Omid Taheri",
+  "short_name": "Omid Taheri",
+  "lang": "en-us",
+  "theme_color": "#bf874b",
+  "background_color": "#bf874b",
+  "icons": [{
+    "src": "/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_192x192_fill_lanczos_center_3.png",
+    "sizes": "192x192",
+    "type": "image/png"
+    }, {
+    "src": "/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png",
+    "sizes": "512x512",
+    "type": "image/png"
+     }],
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest"
+}

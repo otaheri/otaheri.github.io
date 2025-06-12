@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Publications | Omid Taheri</title>
+    <link>https://otaheri.github.io/publication/</link>
+      <atom:link href="https://otaheri.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Publications</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
+      <title>Publications</title>
+      <link>https://otaheri.github.io/publication/</link>
+    </image>
+    
+    <item>
+      <title>InteractVLM: 3D Interaction Reasoning from 2D Foundational Models</title>
+      <link>https://otaheri.github.io/publication/2025_intervlm/</link>
+      <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2025_intervlm/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;We introduce &lt;strong&gt;InteractVLM&lt;/strong&gt;, a novel method to estimate 3D contact points on human bodies and objects from single in-the-wild images, enabling accurate human-object joint reconstruction in 3D. This is challenging due to occlusions, depth ambiguities, and widely varying object shapes. Existing methods rely on 3D contact annotations collected via expensive motion-capture systems or tedious manual labeling, limiting scalability and generalization. To overcome this, InteractVLM harnesses the visual knowledge of large Vision-Language Models (VLMs), fine-tuned with limited 3D contact data. We propose a &lt;strong&gt;Render-Localize-Lift&lt;/strong&gt; module that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Render:&lt;/strong&gt; Embeds 3D body and object surfaces into 2D space via multi-view rendering.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Localize:&lt;/strong&gt; Trains a multi-view localization model (MV-Loc) to infer precise 2D contact points.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lift:&lt;/strong&gt; Projects the localized 2D contacts back to the 3D mesh.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Additionally, we define a new task—&lt;strong&gt;Semantic Human Contact&lt;/strong&gt;—which conditions contact estimation on object semantics, going beyond binary labels to infer object-specific interaction regions. InteractVLM significantly outperforms prior art on contact estimation benchmarks and facilitates joint 3D reconstruction from a single image.&lt;/p&gt;
+&lt;h1 id=&#34;teaser&#34;&gt;Teaser&lt;/h1&gt;
+&lt;img src=&#34;videos/teaser.jpg&#34; class=&#34;center&#34; /&gt;
+&lt;div style=&#34;text-align:center; margin-top:10px;&#34;&gt;
+  &lt;span style=&#34;color:#007acc; font-weight:bold;&#34;&gt;InteractVLM&lt;/span&gt; estimates 3D contact points on both human bodies and objects from single in-the-wild images, enabling accurate human-object joint reconstruction in 3D.
+  We introduce **Semantic Human Contact**, inferring object-specific contacts on the body, and leverage large Vision-Language Models for better generalization to diverse real-world interactions.
+&lt;/div&gt;
+&lt;h1 id=&#34;joint-humanobject-reconstruction&#34;&gt;Joint Human–Object Reconstruction&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Accurate joint 3D reconstruction of human and object from a single image.&lt;/strong&gt;&lt;/p&gt;
+&lt;video autoplay muted loop playsinline height=&#34;300&#34;&gt;
+  &lt;source src=&#34;videos/joint_reconstruction.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;h1 id=&#34;method-overview&#34;&gt;Method Overview&lt;/h1&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Method Overview&#34; srcset=&#34;
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_81607cd6eb15fe4e64e1cd1ab0502830.webp 400w,
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_c9b9ef44694fd392450ca1e4c4c08842.webp 760w,
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_81607cd6eb15fe4e64e1cd1ab0502830.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;308&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;comparison-interactvlm-vs-phosa&#34;&gt;Comparison: InteractVLM vs. PHOSA&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Joint Reconstruction Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/bench.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;Input Image&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/bench_phosa.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;PHOSA&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/bench_ivlm.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;InteractVLM&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;semantic-human-contact-estimation&#34;&gt;Semantic Human Contact Estimation&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Contact Estimation Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/hcontact_bench.jpg&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;Input Image&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/hcontact_bench_deco.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;DECO&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/hcontact_bench_ivlm.gif&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;InteractVLM&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;object-affordance-prediction&#34;&gt;Object Affordance Prediction&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Affordance Comparison&lt;/strong&gt;&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/ocontact_img1.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;Input Image&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/ocontact_img1_piad.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;PIAD&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/ocontact_img1_ivlm.png&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;InteractVLM&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;summary-video&#34;&gt;Summary Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;iframe width=&#34;560&#34; height=&#34;315&#34;
+    src=&#34;https://www.youtube.com/embed/brxygxM1nRk&#34;
+    frameborder=&#34;0&#34;
+    allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34;
+    allowfullscreen&gt;
+  &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;acknowledgments--disclosure&#34;&gt;Acknowledgments &amp;amp; Disclosure&lt;/h1&gt;
+&lt;p&gt;We thank Alpár Cseke for assistance with joint reconstruction evaluation; Tsvetelina Alexiadis and Taylor Obersat for MTurk studies; Yao Feng, Peter Kulits, Markos Diomataris for feedback; and Benjamin Pellkofer for IT support. SKD is funded by IMPRS-IS; UvA work by ERC Starting Grant STRIPES (101165317). DT received Google research funding. MJB’s involvement was solely supported by the Max Planck Society.&lt;/p&gt;
+&lt;h1 id=&#34;contact&#34;&gt;Contact&lt;/h1&gt;
+&lt;p&gt;For technical questions: &lt;a href=&#34;mailto:sai.dwivedi@tue.mpg.de&#34;&gt;sai.dwivedi@tue.mpg.de&lt;/a&gt;&lt;br&gt;
+For licensing: &lt;a href=&#34;mailto:ps-licensing@tue.mpg.de&#34;&gt;ps-licensing@tue.mpg.de&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;bibtex&#34;&gt;BibTeX&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@inproceedings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;dwivedi_interactvlm_2025&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{{InteractVLM}: {3D} Interaction Reasoning from {2D} Foundational Models}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Dwivedi, Sai Kumar and Antić, Dimitrije and Tripathi, Shashank and Taheri, Omid and Schmid, Cordelia and Black, Michael J. and Tzionas, Dimitrios}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;booktitle&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;month&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{June}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp)</title>
+      <link>https://otaheri.github.io/publication/2025_cwgrasp/</link>
+      <pubDate>Thu, 15 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2025_cwgrasp/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Synthesizing 3D whole bodies that realistically grasp objects is crucial for animation, mixed reality, and robotics.&lt;br&gt;
+Key challenges include natural coordination between hand, body, and environment, and the scarcity of training data.&lt;br&gt;
+CWGrasp overcomes these by performing &lt;strong&gt;geometry-based reasoning early&lt;/strong&gt;: we sample a &lt;em&gt;ReachingField&lt;/em&gt; (a probabilistic
+direction field around the object), then condition both the grasping hand (&lt;em&gt;CGrasp&lt;/em&gt;) and the reaching body (&lt;em&gt;CReach&lt;/em&gt;)
+on this direction, and finally run a lightweight optimization to resolve penetrations.&lt;br&gt;
+CWGrasp handles both left- and right-hand grasps, runs ~16× faster than exhaustive baselines (e.g., FLEX),
+and outperforms them on GRAB and ReplicaGrasp datasets.&lt;br&gt;
+Code and models: &lt;a href=&#34;https://gpaschalidis.github.io/cwgrasp&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://gpaschalidis.github.io/cwgrasp&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;teaser&#34;&gt;Teaser&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;h2&gt;3DV 2025&lt;/h2&gt;
+  &lt;img src=&#34;videos/teaser.png&#34; class=&#34;center&#34; alt=&#34;CWGrasp Teaser&#34; /&gt;
+  &lt;p style=&#34;margin-top:10px;&#34;&gt;
+    We develop **CWGrasp**, a framework for synthesizing 3D whole-body grasps on objects placed on receptacles.  
+    By integrating early geometry-based reasoning (&lt;em&gt;ReachingField&lt;/em&gt;) with controllable synthesis, we achieve realistic 
+    grasps at a fraction of the cost compared to prior art.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;method-overview&#34;&gt;Method Overview&lt;/h1&gt;
+&lt;img src=&#34;videos/method_overview.png&#34; class=&#34;center&#34; alt=&#34;Method Overview&#34; /&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;ReachingField:&lt;/strong&gt; Ray-cast from the object to build a probabilistic direction field.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CGrasp &amp;amp; CReach:&lt;/strong&gt; Generate a hand and a body guided by the sampled direction.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Optimization:&lt;/strong&gt; Resolve penetrations with a fast joint refinement.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;reachingfield&#34;&gt;ReachingField&lt;/h1&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/reachingfield_low.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Low-height&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/reachingfield_medium.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Medium-height&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/reachingfield_high.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;High-height&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;cgrasp--creach&#34;&gt;CGrasp &amp;amp; CReach&lt;/h1&gt;
+&lt;div style=&#34;display:flex; gap:20px; justify-content:center;&#34;&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/cgrasp_controllability.png&#34; alt=&#34;CGrasp&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;CGrasp:&lt;/strong&gt; Controllable hand synthesis following the direction.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;img src=&#34;videos/creach_controllability.png&#34; alt=&#34;CReach&#34; style=&#34;width:100%; border-radius:10px;&#34; /&gt;
+    &lt;p&gt;&lt;strong&gt;CReach:&lt;/strong&gt; Directional body reaching synthesis.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;optimization-comparison&#34;&gt;Optimization Comparison&lt;/h1&gt;
+&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_optimization.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;CWGrasp Optimization&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/flex_optimization.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;FLEX Optimization&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;qualitative-results-right-hand&#34;&gt;Qualitative Results: Right-Hand&lt;/h1&gt;
+&lt;h2 id=&#34;low-height-object&#34;&gt;Low-height Object&lt;/h2&gt;
+&lt;div style=&#34;display:flex; gap:20px; justify-content:center;&#34;&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_camera.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;CWGrasp&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/flex_camera.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;FLEX&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;medium-height-object&#34;&gt;Medium-height Object&lt;/h2&gt;
+&lt;div style=&#34;display:flex; gap:20px; justify-content:center;&#34;&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_wineglass.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;CWGrasp&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/flex_wineglass.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;FLEX&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;high-height-object&#34;&gt;High-height Object&lt;/h2&gt;
+&lt;div style=&#34;display:flex; gap:20px; justify-content:center;&#34;&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_elephant.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;CWGrasp&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/flex_elephant.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;FLEX&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;qualitative-results-left-hand&#34;&gt;Qualitative Results: Left-Hand&lt;/h1&gt;
+&lt;div style=&#34;display:flex; gap:20px; justify-content:center; flex-wrap: wrap;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_left_binoculars.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Binoculars&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_left_camera.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Camera&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_left_hammer.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Hammer&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_left_lightbulb.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Lightbulb&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls autoplay muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cwgrasp_left_wineglass.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Wineglass&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;bibtex&#34;&gt;BibTeX&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@inproceedings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;paschalidis2025cwgrasp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{{3D} Whole-Body Grasp Synthesis with Directional Controllability}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Paschalidis, Georgios and Wilschut, Romana and Antić, Dimitrije and Taheri, Omid and Tzionas, Dimitrios}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;booktitle&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{International Conference on 3D Vision (3DV)}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>HUMOS: Human Motion Model Conditioned on Body Shape</title>
+      <link>https://otaheri.github.io/publication/2024_humos/</link>
+      <pubDate>Mon, 15 Jul 2024 12:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2024_humos/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Generating realistic human motion is crucial for many computer vision and graphics applications. The rich diversity of human body shapes and sizes significantly influences how people move. However, existing motion models typically overlook these differences, using a normalized, average body instead. This results in a homogenization of motion across human bodies, with motions not aligning with their physical attributes, thus limiting diversity. To address this, we propose a novel approach to learn a generative motion model conditioned on body shape. We demonstrate that it is possible to learn such a model from unpaired training data using cycle consistency, intuitive physics, and stability constraints that model the correlation between identity and movement.&lt;/p&gt;
+&lt;p&gt;The resulting model, HUMOS, generates natural, physically plausible, and dynamically stable human motions conditioned on body shape. More details are available on our &lt;a href=&#34;https://github.com/CarstenEpic/humos&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;project page&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;*Work done during an internship at Epic Games&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WANDR: Intention-guided Human Motion Generation</title>
+      <link>https://otaheri.github.io/publication/2024_wandr/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2024_wandr/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Synthesizing natural human motions that enable a 3D human avatar to walk and reach for arbitrary goals in 3D space remains an unsolved problem with many applications. Existing methods (data-driven or using reinforcement learning) are limited in terms of generalization and motion naturalness. A primary obstacle is the scarcity of training data that combines locomotion with goal reaching.&lt;/p&gt;
+&lt;p&gt;To address this, we introduce WANDR, a data-driven model that takes an avatar’s initial pose and a goal’s 3D position and generates natural human motions that place the end effector (wrist) on the goal location. To solve this, we introduce novel intention features that drive rich goal-oriented movement.&lt;/p&gt;
+&lt;p&gt;Intention guides the agent to the goal, and interactively adapts the generation to novel situations without needing to define sub-goals or the entire motion path. Crucially, intention allows training on datasets that have goal-oriented motions as well as those that do not. WANDR is a conditional Variational Auto-Encoder (c-VAE), which we train using the AMASS and CIRCLE datasets. We evaluate our method extensively and demonstrate its ability to generate natural and long-term motions that reach 3D goals and generalize to unseen goal locations.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-wandr&#34;&gt;What is WANDR?&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;WANDR&lt;/strong&gt; is a conditional Variational AutoEncoder (c-VAE) that generates realistic motion of human avatars that navigate towards an arbitrary goal location and reach for it.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Input:&lt;/strong&gt; The initial pose of the avatar, the goal location, and the desired motion duration.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Output:&lt;/strong&gt; A sequence of poses that guide the avatar from the initial pose to the goal location and place the wrist on it.&lt;/p&gt;
+&lt;video id=&#34;teaser&#34; autoplay muted loop playsinline height=&#34;100%&#34;&gt;
+  &lt;source src=&#34;videos/branching_motion.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+*Starting from the same state, WANDR generates diverse motions to reach different goal locations all around the human.*
+&lt;h1 id=&#34;how-is-wandr-unique&#34;&gt;How is WANDR unique?&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;WANDR&lt;/strong&gt; is the first human motion generation model driven by an &lt;strong&gt;active feedback loop learned purely from data&lt;/strong&gt;, without any extra steps of reinforcement learning (RL).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Active closed loop guidance through intention features:&lt;/strong&gt; WANDR generates motion autoregressively (frame-by-frame). At each step, it predicts a state-delta that will progress the human to the next state. The prediction of the state-delta is conditioned on time- and goal-dependent features that we call &amp;ldquo;intention&amp;rdquo; (visualized as arrows in videos below). These features are computed at every frame and act as a feedback loop that guides the motion generation to reach the goal. For more details on the intention, please refer to section 3.2 of the paper.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Purely data-driven training:&lt;/strong&gt; Existing datasets that capture motion of humans reaching for goals, like &lt;a href=&#34;https://openaccess.thecvf.com/content/CVPR2023/papers/Araujo_CIRCLE_Capture_in_Rich_Contextual_Environments_CVPR_2023_paper.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CIRCLE&lt;/a&gt;, are scarce and have very small scale to enable generalization. This is why &lt;a href=&#34;https://arxiv.org/pdf/2310.04582.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RL&lt;/a&gt; is a popular approach to learn similar tasks. However, RL comes with its own set of challenges such as sample complexity. Inspired by the paradigm of behavioral cloning we propose a purely data-driven approach where during training a future position of the avatar&amp;rsquo;s hand is considered as the goal. By hallucinating goals this way, we are able to combine both smaller datasets with goal annotations such as &lt;a href=&#34;https://openaccess.thecvf.com/content/CVPR2023/papers/Araujo_CIRCLE_Capture_in_Rich_Contextual_Environments_CVPR_2023_paper.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CIRCLE&lt;/a&gt;, as well as large scale like &lt;a href=&#34;https://amass.is.tue.mpg.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AMASS&lt;/a&gt; that have no goal labels but are essential to learning general navigational skills such as walking, turning etc.&lt;/p&gt;
+&lt;h1 id=&#34;method&#34;&gt;Method&lt;/h1&gt;
+&lt;p&gt;Our method is based on a conditional Variational Auto-Encoder (c-VAE) that learns to model motion as a frame-by-frame generation process by auto-encoding the pose difference between two adjacent frames. The condition signal consists of the human’s current pose and dynamics along with the intention information. Intention is a function of both the current pose and the goal location and therefore actively guides the avatar during the motion generation in a closed loop manner. Through training, the c-VAE learns the distribution of potential subsequent poses conditioned on the current dynamic state of the human and its intention towards a specific goal.&lt;/p&gt;
+&lt;p&gt;We train WANDR using two datasets: &lt;a href=&#34;https://amass.is.tue.mpg.de/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AMASS&lt;/a&gt;, which captures a wide range of motions including locomotion, and &lt;a href=&#34;https://openaccess.thecvf.com/content/CVPR2023/papers/Araujo_CIRCLE_Capture_in_Rich_Contextual_Environments_CVPR_2023_paper.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CIRCLE&lt;/a&gt;, which captures reaching motions. During inference, intention features are calculated based on the goal and act as a feedback loop that guides the motion generation towards the goal.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Method&#34; srcset=&#34;
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_6648189e2130824ce8be7d8a06e44028.webp 400w,
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_e80f1315be66dc761e2a20742cd211a8.webp 760w,
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://otaheri.github.io/publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_6648189e2130824ce8be7d8a06e44028.webp&#34;
+               width=&#34;760&#34;
+               height=&#34;259&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h1 id=&#34;adapting-to-dynamic-goals-without-training-for-it&#34;&gt;Adapting to dynamic goals without training for it&lt;/h1&gt;
+&lt;p&gt;Since &lt;strong&gt;WANDR&lt;/strong&gt; generates motion autoregressively, the intention features are updated at every frame. This allows the model to adapt to goals that move and change over time. Observe in the videos below how the intention features actively guide the avatar to orient itself towards the goal (orange arrow), get close to it (red arrow) and reach for it (blue arrow).&lt;/p&gt;
+&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;&#34;&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video poster=&#34;&#34; id=&#34;moving_goal1&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/moving_goal1.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video poster=&#34;&#34; id=&#34;multiple_goals4&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/multiple_goals4.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video poster=&#34;&#34; id=&#34;moving_goal2&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/moving_goal2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video poster=&#34;&#34; id=&#34;multiple_goals3&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/multiple_goals3.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video poster=&#34;&#34; id=&#34;moving_goal5&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/moving_goal5.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;WANDR&lt;/strong&gt; generates motion autoregressively. This allows it to adapt to goals that move and change over time even though it has never been trained on scenarios with dynamic goals.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://youtu.be/9szizM-XUCg?si=B836zQoWTI4I9s61&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{diomataris2024wandr,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title = {{WANDR}: Intention-guided Human Motion Generation},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;author = {Diomataris, Markos and Athanasiou, Nikos and Taheri, Omid and Wang, Xi and Hilliges, Otmar and Black, Michael J.},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;booktitle = {Proceedings IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;year = {2024},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>GRIP: Generating Interaction Poses Using Spatial Cues and Latent Consistency</title>
+      <link>https://otaheri.github.io/publication/2024_grip/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2024_grip/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Hands are dexterous and highly versatile manipulators that are central to how humans interact with objects and their environment. Consequently, modeling realistic hand-object interactions, including the subtle motion of individual fingers, is critical for applications in computer graphics, computer vision, and mixed reality. Prior work on capturing and modeling humans interacting with objects in 3D focuses on the body and object motion, often ignoring hand pose. In contrast, we introduce GRIP, a learning-based method that takes, as input, the 3D motion of the body and the object, and synthesizes realistic motion for both hands before, during, and after object interaction. As a preliminary step before synthesizing the hand motion, we first use a network, ANet, to denoise the arm motion. Then, we leverage the spatio-temporal relationship between the body and the object to extract novel temporal interaction cues, and use them in a two-stage inference pipeline to generate the hand motion. In the first stage, we introduce a new approach to encourage motion temporal consistency in the latent space (LTC) and generate consistent interaction motions. In the second stage, GRIP generates refined hand poses to avoid hand-object penetrations. Given sequences of noisy body and object motion, GRIP “upgrades” them to include hand-object interaction. Quantitative experiments and perceptual studies demonstrate that GRIP outperforms baseline methods and generalizes to unseen objects and motions from different motion-capture datasets. Our models and code are available for research purposes at &lt;a href=&#34;https://grip.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GRIP&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/IpIIQrdahYs&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;data-and-code&#34;&gt;Data and Code&lt;/h1&gt;
+&lt;p&gt;Please register and accept the License Agreement on this website to access the GRIP models. When creating an account, &lt;strong&gt;please opt-in for email communication&lt;/strong&gt;, so that we can &lt;strong&gt;reach out to you&lt;/strong&gt; via email to announce potential &lt;strong&gt;significant updates&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;download.php&#34;&gt;Model files/weights&lt;/a&gt; (works &lt;em&gt;only&lt;/em&gt; after sign-in)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/otaheri/GRIP&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code&lt;/a&gt; (GitHub)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;results&#34;&gt;Results&lt;/h1&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col-md-6&#34;&gt;
+    &lt;video poster=&#34;&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/s3_camera_pass_1_renders_body_flat.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;div class=&#34;caption&#34;&gt;Input Motion 1&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col-md-6&#34;&gt;
+    &lt;video poster=&#34;&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/s3_camera_pass_1_renders_body_ref.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;div class=&#34;caption&#34;&gt;Output Motion 1&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col-md-6&#34;&gt;
+    &lt;video poster=&#34;&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/s1_binoculars_offhand_1_renders_body_flat.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;div class=&#34;caption&#34;&gt;Input Motion 2&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col-md-6&#34;&gt;
+    &lt;video poster=&#34;&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/s1_binoculars_offhand_1_renders_body_ref.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;div class=&#34;caption&#34;&gt;Output Motion 2&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;row&#34;&gt;
+  &lt;div class=&#34;col-md-6&#34;&gt;
+    &lt;video poster=&#34;&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/proximity_motion.mov&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;div class=&#34;caption&#34;&gt;Proximity Sensor&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&#34;col-md-6&#34;&gt;
+    &lt;video poster=&#34;&#34; autoplay controls muted loop playsinline height=&#34;100%&#34;&gt;
+      &lt;source src=&#34;videos/rh_ambient.mov&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;div class=&#34;caption&#34;&gt;Ambient Sensor&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{taheri2024grip,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  title  = {{GRIP}: Generating Interaction Poses Using Latent Consistency and Spatial Cues},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  author = {Omid Taheri and Yi Zhou and Dimitrios Tzionas and Yang Zhou and Duygu Ceylan and Soren Pirk and Michael J. Black},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  booktitle = {International Conference on 3D Vision ({3DV})},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  year = {2024},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  url = {https://grip.is.tue.mpg.de}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>InterCap: Joint Markerless 3D Tracking of Humans and Objects in Interaction</title>
+      <link>https://otaheri.github.io/publication/2024_intercap/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2024_intercap/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Humans constantly interact with objects to accomplish tasks. To understand such interactions, computers need to reconstruct these in 3D from images of whole bodies manipulating objects, e.g., for grasping, moving, and using the latter. This involves key challenges, such as occlusion between the body and objects, motion blur, depth ambiguities, and the low image resolution of hands and graspable object parts. To make the problem tractable, the community has followed a divide-and-conquer approach, focusing either only on interacting hands, ignoring the body, or on interacting bodies, ignoring the hands. However, these are only parts of the problem. On the contrary, recent work focuses on the whole problem. The GRAB dataset addresses whole-body interaction with dexterous hands but captures motion via markers and lacks video, while the BEHAVE dataset captures video of body-object interaction but lacks hand detail. We address the limitations of prior work with InterCap, a novel method that reconstructs interacting whole-bodies and objects from multi-view RGB-D data, using the parametric whole-body SMPL-X model and known object meshes. To tackle the above challenges, InterCap uses two key observations: (i) Contact between the body and object can be used to improve the pose estimation of both. (ii) Consumer-level Azure Kinect cameras let us set up a simple and flexible multi-view RGB-D system for reducing occlusions, with spatially calibrated and temporally synchronized cameras. With our InterCap method, we capture the InterCap dataset, which contains 10 subjects (5 males and 5 females) interacting with 10 daily objects of various sizes and affordances, including contact with the hands or feet. To this end, we introduce a new data-driven hand motion prior, as well as explore simple ways for automatic contact detection based on 2D and 3D cues. In total, InterCap has 223 RGB-D videos, resulting in 67,357 multi-view frames, each containing 6 RGB-D images, paired with pseudo ground-truth 3D body and object meshes. Our InterCap method and dataset fill an important gap in the literature and support many research directions. Our data and code are available for research purposes.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/d5wHLDIqN6c&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;data&#34;&gt;Data&lt;/h1&gt;
+&lt;p&gt;Please register and accept the License agreement on &lt;a href=&#34;https://intercap.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;InterCap&lt;/a&gt; website in order to get access to the dataset.&lt;/p&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@article{huang2024intercap,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title = {{InterCap}: Joint Markerless {3D} Tracking of Humans and Objects in Interaction from Multi-view {RGB-D} Images},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;author = {Huang, Yinghao and Taheri, Omid and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;journal = {{International Journal of Computer Vision (IJCV)}},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume = {},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;number = {},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pages = {},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;doi = {10.1007/s11263-024-01984-1},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;year = {2024}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>ARCTIC: A Dataset for Dexterous Bimanual Hand-Object Manipulation</title>
+      <link>https://otaheri.github.io/publication/2023_arctic/</link>
+      <pubDate>Sat, 01 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2023_arctic/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Humans intuitively understand that inanimate objects do not move by themselves, but that state changes are typically caused by human manipulation (e.g., the opening of a book). This is not yet the case for machines. In part this is because there exist no datasets with ground-truth 3D annotations for the study of physically consistent and synchronized motion of hands and articulated objects. To this end, we introduce ARCTIC &amp;ndash; a dataset of two hands that dexterously manipulate objects, containing 2.1M video frames paired with accurate 3D hand and object meshes and detailed, dynamic contact information. It contains bi-manual articulation of objects such as scissors or laptops, where hand poses and object states evolve jointly in time. We propose two novel articulated hand-object interaction tasks: (1) Consistent motion reconstruction: Given a monocular video, the goal is to reconstruct two hands and articulated objects in 3D, so that their motions are spatio-temporally consistent. (2) Interaction field estimation: Dense relative hand-object distances must be estimated from images. We introduce two baselines ArcticNet and InterField, respectively, and evaluate them qualitatively and quantitatively on ARCTIC.&lt;/p&gt;
+&lt;h1 id=&#34;dexterous-motion--dynamic-contact&#34;&gt;Dexterous Motion + Dynamic Contact&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;video id=&#34;dollyzoom&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34; height=&#34;100%&#34;&gt;
+  &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/dexterous.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+&lt;/video&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;annotation-with-mano&#34;&gt;Annotation with MANO&lt;/h1&gt;
+&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;&#34;&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;steve&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/mano/seq01.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;chair-tp&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/mano/seq02.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;shiba&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/mano/seq03.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;fullbody&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/mano/seq04.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;blueshirt&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/mano/seq05.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;mask&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/mano/seq06.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;annotation-with-smplx&#34;&gt;Annotation with SMPLX&lt;/h1&gt;
+&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;&#34;&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/smplx/seq01.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/smplx/seq02.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/smplx/seq04.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/smplx/seq04.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;rendered-depth&#34;&gt;Rendered Depth&lt;/h1&gt;
+&lt;p&gt;Here we only visualize human + object for simplicity.&lt;/p&gt;
+&lt;div style=&#34;display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;&#34;&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/depth/seq03.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/depth/seq04.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/depth/seq05.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/depth/seq06.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;steve&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/depth/seq01.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex: 1 1 300px;&#34;&gt;
+    &lt;video id=&#34;chair-tp&#34; poster=&#34;&#34; autoplay=&#34;autoplay&#34; loop=&#34;loop&#34; muted=&#34;&#34; controls=&#34;controls&#34; width=&#34;100%&#34;&gt;
+      &lt;source src=&#34;https://download.is.tue.mpg.de/arctic/static/videos/depth/seq02.mp4&#34; type=&#34;video/mp4&#34; /&gt;
+    &lt;/video&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{fan2023arctic,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  title = {{ARCTIC}: A Dataset for Dexterous Bimanual Hand-Object Manipulation},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  author = {Fan, Zicong and Taheri, Omid and Tzionas, Dimitrios and Kocabas, Muhammed and Kaufmann, Manuel and Black, Michael J. and Hilliges, Otmar},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  booktitle = {Proceedings IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  year = {2023}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>IPMAN: 3D Human Pose Estimation via Intuitive Physics</title>
+      <link>https://otaheri.github.io/publication/2023_ipman/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2023_ipman/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;The estimation of 3D human body shape and pose from images has advanced rapidly. While the results are often well aligned with image features in the camera view, the 3D pose is often physically implausible; bodies lean, float, or penetrate the floor. This is because most methods ignore the fact that bodies are typically supported by the scene. To address this, some methods exploit physics engines to enforce physical plausibility. Such methods, however, are not differentiable, rely on unrealistic proxy bodies, and are difficult to integrate into existing optimization and learning frameworks. To account for this, we take a different approach that exploits novel intuitive-physics (IP) terms that can be inferred from a 3D SMPL body interacting with the scene. Specifically, we infer biomechanically relevant features such as the pressure heatmap of the body on the floor, the Center of Pressure (CoP) from the heatmap, and the SMPL body’s Center of Mass (CoM) projected on the floor. With these, we develop IPMAN, to estimate a 3D body from a color image in a “stable” configuration by encouraging plausible floor contact and overlapping CoP and CoM. Our IP terms are intuitive, easy to implement, fast to compute, and can be integrated into any SMPL-based optimization or regression method; we show examples of both. To evaluate our method, we present MoYo, a dataset with synchronized multi-view color images and 3D bodies with complex poses, body-floor contact, and ground-truth CoM and pressure. Evaluation on MoYo, RICH, and Human3.6M shows that our IP terms produce more plausible results than the state of the art; they improve accuracy for static poses, while not hurting dynamic ones. Code and data will be available for research.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://www.youtube.com/embed/Dufvp_O0ziU&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;data-and-code&#34;&gt;Data and Code&lt;/h1&gt;
+&lt;p&gt;Please register and accept the License agreement on the &lt;a href=&#34;https://moyo.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MoYo&lt;/a&gt; website in order to get access to the dataset.&lt;/p&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{tripathi2023ipman,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    title = {{3D} Human Pose Estimation via Intuitive Physics},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    author = {Tripathi, Shashank and M{\&amp;#34;u}ller, Lea and Huang, Chun-Hao P. and Taheri Omid and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    booktitle = {Conference on Computer Vision and Pattern Recognition ({CVPR})},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    pages = {4713--4725},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    year = {2023},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    url = {https://ipman.is.tue.mpg.de}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>InterCap: Joint Markerless 3D Tracking of Humans and Objects in Interaction</title>
+      <link>https://otaheri.github.io/publication/2022_intercap/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2022_intercap/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Humans constantly interact with objects to accomplish tasks. To understand such interactions, computers need to reconstruct these in 3D from images of whole bodies manipulating objects, e.g., for grasping, moving, and using the latter. This involves key challenges, such as occlusion between the body and objects, motion blur, depth ambiguities, and the low image resolution of hands and graspable object parts. To make the problem tractable, the community has followed a divide-and-conquer approach, focusing either only on interacting hands, ignoring the body, or on interacting bodies, ignoring the hands. However, these are only parts of the problem. On the contrary, recent work focuses on the whole problem. The GRAB dataset addresses whole-body interaction with dexterous hands but captures motion via markers and lacks video, while the BEHAVE dataset captures video of body-object interaction but lacks hand detail. We address the limitations of prior work with InterCap, a novel method that reconstructs interacting whole-bodies and objects from multi-view RGB-D data, using the parametric whole-body SMPL-X model and known object meshes. To tackle the above challenges, InterCap uses two key observations: (i) Contact between the body and object can be used to improve the pose estimation of both. (ii) Consumer-level Azure Kinect cameras let us set up a simple and flexible multi-view RGB-D system for reducing occlusions, with spatially calibrated and temporally synchronized cameras. With our InterCap method, we capture the InterCap dataset, which contains 10 subjects (5 males and 5 females) interacting with 10 daily objects of various sizes and affordances, including contact with the hands or feet. To this end, we introduce a new data-driven hand motion prior, as well as explore simple ways for automatic contact detection based on 2D and 3D cues. In total, InterCap has 223 RGB-D videos, resulting in 67,357 multi-view frames, each containing 6 RGB-D images, paired with pseudo ground-truth 3D body and object meshes. Our InterCap method and dataset fill an important gap in the literature and support many research directions. Our data and code are available for research purposes.&lt;/p&gt;
+&lt;h1 id=&#34;video&#34;&gt;Video&lt;/h1&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/d5wHLDIqN6c&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&#34;data&#34;&gt;Data&lt;/h1&gt;
+&lt;p&gt;Please register and accept the License agreement on &lt;a href=&#34;https://intercap.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;InterCap&lt;/a&gt; website in order to get access to the dataset.&lt;/p&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@article{huang2024intercap,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title = {{InterCap}: Joint Markerless {3D} Tracking of Humans and Objects in Interaction from Multi-view {RGB-D} Images},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;author = {Huang, Yinghao and Taheri, Omid and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;journal = {{International Journal of Computer Vision (IJCV)}},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume = {},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;number = {},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pages = {},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;doi = {10.1007/s11263-024-01984-1},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;year = {2024}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{huang2022intercap,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;title = {{InterCap}: {J}oint Markerless {3D} Tracking of Humans and Objects in Interaction},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;author = {Huang, Yinghao and Taheri, Omid and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;booktitle = {{German Conference on Pattern Recognition (GCPR)}},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;volume = {13485},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pages = {281--299},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;year = {2022},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;organization = {Springer},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;series = {Lecture Notes in Computer Science}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>GOAL: Generating 4D Whole-Body Motion for Hand-Object Grasping</title>
+      <link>https://otaheri.github.io/publication/2022_goal/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2022_goal/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Generating digital humans that move realistically has many applications and is widely studied, but existing methods focus on the major limbs of the body, ignoring the hands and head. Hands have been separately studied but the focus has been on generating realistic static grasps of objects. To synthesize virtual characters that interact with the world, we need to generate full-body motions and realistic hand grasps simultaneously. Both sub-problems are challenging on their own and, together, the state-space of poses is significantly larger, the scales of hand and body motions differ, and the whole-body posture and the hand grasp must agree, satisfy physical constraints, and be plausible. Additionally, the head is involved because the avatar must look at the object to interact with it. For the first time, we address the problem of generating full-body, hand, and head motions of an avatar grasping an unknown object. As input, our method, called GOAL, takes a 3D object, its position, and a starting 3D body pose and shape. GOAL outputs a sequence of whole-body poses using two novel networks. First, GNet generates a goal whole-body grasp with a realistic body, head, arm, and hand pose, as well as hand-object contact. Second, MNet generates the motion between the starting and goal pose. This is challenging, as it requires the avatar to walk towards the object with foot-ground contact, orient the head towards it, reach out, and grasp it with a realistic hand pose and hand-object contact. To achieve this the networks exploit a representation that combines SMPL-X body parameters and 3D vertex offsets. We train and evaluate GOAL, both qualitatively and quantitatively, on the GRAB dataset. Results show that GOAL generalizes well to unseen objects, outperforming baselines. A perceptual study shows that GOAL’s generated motions approach the realism of GRAB’s ground truth. GOAL takes a step towards synthesizing realistic full-body object grasping. Our models and code are available for research purposes.&lt;/p&gt;
+&lt;h1 id=&#34;what-is-goal&#34;&gt;What is GOAL?&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;GOAL&lt;/strong&gt; is a generative model that generates full-body motion of the human body that walks and grasps unseen 3D objects. GOAL consists of two main steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GNet&lt;/strong&gt; generates the final grasp of the motion.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;MNet&lt;/strong&gt; generates the motion from the starting to the grasp frame.
+It is trained on the &lt;a href=&#34;http://grab.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GRAB&lt;/a&gt; dataset. For more details please refer to the &lt;a href=&#34;https://arxiv.org/abs/2112.11454&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paper&lt;/a&gt; or the &lt;a href=&#34;http://goal.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;project website&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;GOAL generates diverse motions to reach different goal locations around the human.&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&#34;gnet&#34;&gt;GNet&lt;/h1&gt;
+&lt;p&gt;Below you can see some generated whole-body static grasps from GNet. The hand close-ups are from the same grasp, and for better visualization:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Apple&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Binoculars&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Toothpaste&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s1_apple_rh.gif&#34; alt=&#34;Apple&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s4_binoculars_rh.gif&#34; alt=&#34;Binoculars&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s5_toothpaste_rh.gif&#34; alt=&#34;Toothpaste&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s1_apple.gif&#34; alt=&#34;Apple&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s4_binoculars.gif&#34; alt=&#34;Binoculars&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s5_toothpaste.gif&#34; alt=&#34;Toothpaste&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;mnet&#34;&gt;MNet&lt;/h1&gt;
+&lt;p&gt;Below you can see some generated whole-body motions that walk and grasp 3D objects using MNet:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Camera&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mug&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Apple&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s2_camera_lift_motion.gif&#34; alt=&#34;Camera&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s6_mug_drink_2_motion.gif&#34; alt=&#34;Mug&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/s1_apple_eat_1_motion.gif&#34; alt=&#34;Apple&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For more details check out the YouTube video below.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=A7b8DYovDZY&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GOAL/raw/main/images/video_teaser_play.png&#34; alt=&#34;Video&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;data-and-code&#34;&gt;Data and Code&lt;/h1&gt;
+&lt;p&gt;Please register and accept the License agreement on &lt;a href=&#34;https://grab.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GRAB&lt;/a&gt; website to get access to the GRAB dataset.&lt;/p&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{taheri2022goal,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    title = {{GOAL}: {G}enerating {4D} Whole-Body Motion for Hand-Object Grasping},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    author = {Taheri, Omid and Choutas, Vasileios and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    booktitle = {Conference on Computer Vision and Pattern Recognition ({CVPR})},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    year = {2022},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    url = {https://goal.is.tue.mpg.de}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{GRAB:2020,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    title = {{GRAB}: {A} Dataset of Whole-Body Human Grasping of Objects},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    author = {Taheri, Omid and Ghorbani, Nima and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    booktitle = {European Conference on Computer Vision ({ECCV})},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    year = {2020},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    url = {https://grab.is.tue.mpg.de}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>GRAB: A Dataset of Whole-Body Human Grasping of Objects</title>
+      <link>https://otaheri.github.io/publication/2020_grab/</link>
+      <pubDate>Wed, 01 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2020_grab/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Training computers to understand, model, and synthesize human grasping requires a rich dataset containing complex 3D object shapes, detailed contact information, hand pose and shape, and the 3D body motion over time. While &amp;ldquo;grasping&amp;rdquo; is commonly thought of as a single hand stably lifting an object, we capture the motion of the entire body and adopt the generalized notion of &amp;ldquo;whole-body grasps&amp;rdquo;. Thus, we collect a new dataset, called GRAB (GRasping Actions with Bodies), of whole-body grasps, containing full 3D shape and pose sequences of 10 subjects interacting with 51 everyday objects of varying shape and size. Given MoCap markers, we fit the full 3D body shape and pose, including the articulated face and hands, as well as the 3D object pose. This gives detailed 3D meshes over time, from which we compute contact between the body and object. This is a unique dataset, that goes well beyond existing ones for modeling and understanding how humans grasp and manipulate objects, how their full body is involved, and how interaction varies with the task. We illustrate the practical value of GRAB with an example application; we train GrabNet, a conditional generative network, to predict 3D hand grasps for unseen 3D object shapes.&lt;/p&gt;
+&lt;h1 id=&#34;tldr&#34;&gt;TL;DR&lt;/h1&gt;
+&lt;p&gt;We capture a very accurate dataset, named GRAB, of people interacting with 3D objects. We then use it to train a network, GrabNet, that generates hand grasps for novel objects.&lt;/p&gt;
+&lt;h1 id=&#34;grab-dataset&#34;&gt;GRAB Dataset&lt;/h1&gt;
+&lt;h2 id=&#34;dataset-overview&#34;&gt;Dataset Overview&lt;/h2&gt;
+&lt;p&gt;GRAB is a dataset of full-body motions interacting and grasping 3D objects. It contains accurate finger and facial motions as well as the contact between the objects and body. The dataset includes 5 male and 5 female participants performing 4 different motion intents with 51 everyday objects.&lt;/p&gt;
+&lt;h3 id=&#34;example-motions&#34;&gt;Example Motions&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Eat - Banana&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Talk - Phone&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Drink - Mug&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;See - Binoculars&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/banana.gif&#34; alt=&#34;Banana&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/phone.gif&#34; alt=&#34;Phone&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/mug.gif&#34; alt=&#34;Mug&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/binoculars.gif&#34; alt=&#34;Binoculars&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The GRAB dataset also contains binary contact maps between the body and objects. With our interacting meshes, one could integrate these contact maps over time to create &amp;ldquo;contact heatmaps&amp;rdquo;, or even compute fine-grained contact annotations, as shown below:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Contact Heatmaps&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Contact Annotation&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/contact.png&#34; alt=&#34;contact&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/contact1.png&#34; alt=&#34;contact1&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;dataset-videos&#34;&gt;Dataset Videos&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Long Video&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Short Video&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://youtu.be/s5syYMxmNHA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/long.png&#34; alt=&#34;LongVideo&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://youtu.be/VHN0DBUB4H8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/short.png&#34; alt=&#34;ShortVideo&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;grabnet&#34;&gt;GrabNet&lt;/h1&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;GrabNet is a generative model for 3D hand grasps. Given a 3D object mesh, GrabNet can predict several hand grasps for it. GrabNet has two successive models, CoarseNet (cVAE) and RefineNet. It is trained on a subset (right hand and object only) of the GRAB dataset.&lt;/p&gt;
+&lt;h3 id=&#34;generated-results-from-grabnet&#34;&gt;Generated Results from GrabNet&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Binoculars&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Mug&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Camera&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Toothpaste&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GrabNet/raw/master/images/binoculars.gif&#34; alt=&#34;Binoculars&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GrabNet/raw/master/images/mug.gif&#34; alt=&#34;Mug&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GrabNet/raw/master/images/camera.gif&#34; alt=&#34;Camera&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GrabNet/raw/master/images/toothpaste.gif&#34; alt=&#34;Toothpaste&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;grabnet-videos&#34;&gt;GrabNet Videos&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Long Video&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Short Video&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://youtu.be/s5syYMxmNHA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/long.png&#34; alt=&#34;LongVideo&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;&lt;a href=&#34;https://youtu.be/VHN0DBUB4H8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://github.com/otaheri/GRAB/raw/master/images/short.png&#34; alt=&#34;ShortVideo&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;data-and-code&#34;&gt;Data and Code&lt;/h1&gt;
+&lt;p&gt;Please register and accept the License agreement on &lt;a href=&#34;https://grab.is.tue.mpg.de&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this&lt;/a&gt; website in order to get access to the GRAB dataset. The license and downloads section include explicit restrictions per subject, to which you agree to comply with.&lt;/p&gt;
+&lt;p&gt;When creating an account, please opt-in for email communication, so that we can reach out to you per email to announce potential significant updates.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://grab.is.tue.mpg.de/download.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GRAB dataset (works only after sign-in)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://grab.is.tue.mpg.de/download.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrabNet data (works only after sign-in)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://grab.is.tue.mpg.de/download.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GrabNet model files/weights (works only after sign-in)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/otaheri/GRAB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code for GRAB (GitHub)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/otaheri/GrabNet&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Code for GrabNet (GitHub)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;citation&#34;&gt;Citation&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;@inproceedings{GRAB:2020,
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  title = {{GRAB}: A Dataset of Whole-Body Human Grasping of Objects},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  author = {Taheri, Omid and Ghorbani, Nima and Black, Michael J. and Tzionas, Dimitrios},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  booktitle = {European Conference on Computer Vision (ECCV)},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  year = {2020},
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  url = {https://grab.is.tue.mpg.de}
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Human Leg Motion Tracking by Fusing IMUs and RGB Camera Data Using Extended Kalman Filter</title>
+      <link>https://otaheri.github.io/publication/2019_leg_imu/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2019_leg_imu/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Human motion capture is frequently used to study rehabilitation and clinical problems, as well
+as to provide realistic animation for the entertainment industry. IMU-based systems, as well as Markerbased
+motion tracking systems, are most popular methods to track movement due to their low cost of
+implementation and lightweight. This paper proposes a quaternion-based Extended Kalman filter
+approach to recover the human leg segments motions with a set of IMU sensors data fused with
+cameramarker system data. In this paper, an Extended Kalman Filter approach is developed to fuse the data of
+two IMUs and one RGB camera for human leg motion tracking. Based on the complementary properties
+of the inertial sensors and camera-marker system, in the introduced new measurement model, the
+orientation data of the upper leg and the lower leg is updated through three measurement equations. The
+positioning of the human body is made possible by the tracked position of the pelvis joint by the camera
+marker system. A mathematical model has been utilized to estimate joints’ depth in 2D images. The
+efficiency of the proposed algorithm is evaluated by an optical motion tracker system.&lt;/p&gt;
+&lt;!--
+# Video
+
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+--&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

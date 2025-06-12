@@ -1,0 +1,230 @@
+---
+title: "3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp)"
+toc: true
+
+date: '2024-08-15T00:00:00Z'
+doi: ''
+view: 2
+publishDate: '2024-08-15T00:00:00Z'
+
+publication_types: ['1']
+publication: In *International Conference on 3D Vision (3DV 2025)*
+publication_short: In *3DV 2025*
+
+image:
+  placement: 1
+  caption: 'Teaser: CWGrasp Framework Overview'
+
+tags: []
+authors: ["Georgios Paschalidis", "Romana Wilschut", "Dimitrije Antić", "otaheri", "Dimitrios Tzionas"]
+
+uurl_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
+links:
+  - icon_pack: fas
+    icon: scroll
+    name: arXiv
+    url: 'https://arxiv.org/abs/2408.16770'
+  - icon_pack: fas
+    icon: video
+    name: Video
+    url: 'https://www.youtube.com/watch?v=d9a4C2GHIv0'
+  - icon_pack: fab
+    icon: github
+    name: Code
+    url: 'https://github.com/gpaschalidis/CWGrasp'
+  - icon_pack: fas
+    icon: file
+    name: 3DV 2025
+---
+
+
+
+# Abstract
+
+Synthesizing 3D whole bodies that realistically grasp objects is crucial for animation, mixed reality, and robotics.  
+Key challenges include natural coordination between hand, body, and environment, and the scarcity of training data.  
+CWGrasp overcomes these by performing **geometry-based reasoning early**: we sample a *ReachingField* (a probabilistic 
+direction field around the object), then condition both the grasping hand (*CGrasp*) and the reaching body (*CReach*) 
+on this direction, and finally run a lightweight optimization to resolve penetrations.  
+CWGrasp handles both left- and right-hand grasps, runs ~16× faster than exhaustive baselines (e.g., FLEX), 
+and outperforms them on GRAB and ReplicaGrasp datasets.  
+Code and models: <https://gpaschalidis.github.io/cwgrasp>.
+
+# Teaser
+
+<div style="text-align:center;">
+  <h2>3DV 2025</h2>
+  <img src="videos/teaser.png" class="center" alt="CWGrasp Teaser" />
+  <p style="margin-top:10px;">
+    We develop **CWGrasp**, a framework for synthesizing 3D whole-body grasps on objects placed on receptacles.  
+    By integrating early geometry-based reasoning (<em>ReachingField</em>) with controllable synthesis, we achieve realistic 
+    grasps at a fraction of the cost compared to prior art.
+  </p>
+</div>
+
+# Method Overview
+
+<img src="videos/method_overview.png" class="center" alt="Method Overview" />
+
+1. **ReachingField:** Ray-cast from the object to build a probabilistic direction field.  
+2. **CGrasp & CReach:** Generate a hand and a body guided by the sampled direction.  
+3. **Optimization:** Resolve penetrations with a fast joint refinement.
+
+# ReachingField
+
+<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/reachingfield_low.mp4" type="video/mp4">
+    </video>
+    <p><strong>Low-height</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/reachingfield_medium.mp4" type="video/mp4">
+    </video>
+    <p><strong>Medium-height</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/reachingfield_high.mp4" type="video/mp4">
+    </video>
+    <p><strong>High-height</strong></p>
+  </div>
+</div>
+
+# CGrasp & CReach
+
+<div style="display:flex; gap:20px; justify-content:center;">
+  <div style="flex:1; text-align:center;">
+    <img src="videos/cgrasp_controllability.png" alt="CGrasp" style="width:100%; border-radius:10px;" />
+    <p><strong>CGrasp:</strong> Controllable hand synthesis following the direction.</p>
+  </div>
+  <div style="flex:1; text-align:center;">
+    <img src="videos/creach_controllability.png" alt="CReach" style="width:100%; border-radius:10px;" />
+    <p><strong>CReach:</strong> Directional body reaching synthesis.</p>
+  </div>
+</div>
+
+# Optimization Comparison
+
+<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_optimization.mp4" type="video/mp4">
+    </video>
+    <p><strong>CWGrasp Optimization</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/flex_optimization.mp4" type="video/mp4">
+    </video>
+    <p><strong>FLEX Optimization</strong></p>
+  </div>
+</div>
+
+# Qualitative Results: Right-Hand
+
+## Low-height Object
+
+<div style="display:flex; gap:20px; justify-content:center;">
+  <div style="flex:1; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_camera.mp4" type="video/mp4">
+    </video>
+    <p><strong>CWGrasp</strong></p>
+  </div>
+  <div style="flex:1; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/flex_camera.mp4" type="video/mp4">
+    </video>
+    <p><strong>FLEX</strong></p>
+  </div>
+</div>
+
+## Medium-height Object
+
+<div style="display:flex; gap:20px; justify-content:center;">
+  <div style="flex:1; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_wineglass.mp4" type="video/mp4">
+    </video>
+    <p><strong>CWGrasp</strong></p>
+  </div>
+  <div style="flex:1; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/flex_wineglass.mp4" type="video/mp4">
+    </video>
+    <p><strong>FLEX</strong></p>
+  </div>
+</div>
+
+## High-height Object
+
+<div style="display:flex; gap:20px; justify-content:center;">
+  <div style="flex:1; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_elephant.mp4" type="video/mp4">
+    </video>
+    <p><strong>CWGrasp</strong></p>
+  </div>
+  <div style="flex:1; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/flex_elephant.mp4" type="video/mp4">
+    </video>
+    <p><strong>FLEX</strong></p>
+  </div>
+</div>
+
+# Qualitative Results: Left-Hand
+
+<div style="display:flex; gap:20px; justify-content:center; flex-wrap: wrap;">
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_left_binoculars.mp4" type="video/mp4">
+    </video>
+    <p><strong>Binoculars</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_left_camera.mp4" type="video/mp4">
+    </video>
+    <p><strong>Camera</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_left_hammer.mp4" type="video/mp4">
+    </video>
+    <p><strong>Hammer</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_left_lightbulb.mp4" type="video/mp4">
+    </video>
+    <p><strong>Lightbulb</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls autoplay muted loop width="200">
+      <source src="videos/cwgrasp_left_wineglass.mp4" type="video/mp4">
+    </video>
+    <p><strong>Wineglass</strong></p>
+  </div>
+</div>
+
+# BibTeX
+
+```bibtex
+@inproceedings{paschalidis2025cwgrasp,
+  title     = {{3D} Whole-Body Grasp Synthesis with Directional Controllability},
+  author    = {Paschalidis, Georgios and Wilschut, Romana and Antić, Dimitrije and Taheri, Omid and Tzionas, Dimitrios},
+  booktitle = {International Conference on 3D Vision (3DV)},
+  year      = {2025},
+}

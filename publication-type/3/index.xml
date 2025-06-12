@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 | Omid Taheri</title>
+    <link>https://otaheri.github.io/publication-type/3/</link>
+      <atom:link href="https://otaheri.github.io/publication-type/3/index.xml" rel="self" type="application/rss+xml" />
+    <description>3</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 01 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
+      <title>3</title>
+      <link>https://otaheri.github.io/publication-type/3/</link>
+    </image>
+    
+    <item>
+      <title>Human Leg Motion Tracking by Fusing IMUs and RGB Camera Data Using Extended Kalman Filter</title>
+      <link>https://otaheri.github.io/publication/2019_leg_imu/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://otaheri.github.io/publication/2019_leg_imu/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;Human motion capture is frequently used to study rehabilitation and clinical problems, as well
+as to provide realistic animation for the entertainment industry. IMU-based systems, as well as Markerbased
+motion tracking systems, are most popular methods to track movement due to their low cost of
+implementation and lightweight. This paper proposes a quaternion-based Extended Kalman filter
+approach to recover the human leg segments motions with a set of IMU sensors data fused with
+cameramarker system data. In this paper, an Extended Kalman Filter approach is developed to fuse the data of
+two IMUs and one RGB camera for human leg motion tracking. Based on the complementary properties
+of the inertial sensors and camera-marker system, in the introduced new measurement model, the
+orientation data of the upper leg and the lower leg is updated through three measurement equations. The
+positioning of the human body is made possible by the tracked position of the pelvis joint by the camera
+marker system. A mathematical model has been utilized to estimate joints’ depth in 2D images. The
+efficiency of the proposed algorithm is evaluated by an optical motion tracker system.&lt;/p&gt;
+&lt;!--
+# Video
+
+&lt;div style=&#34;text-align:center;&#34;&gt;
+&lt;iframe src=&#34;https://download.is.tue.mpg.de/arctic/video.mp4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+
+# Data and Code
+
+Please register and accept the License agreement on [GRAB](https://grab.is.tue.mpg.de) website in order to get access to the GRAB dataset. 
+
+
+
+# Citation
+
+```
+
+```
+--&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
