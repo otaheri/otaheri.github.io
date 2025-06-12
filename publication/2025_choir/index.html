@@ -277,7 +277,9 @@
 
   
 
-<meta name="description" content="Abstract We introduce CWGrasp, a framework for synthesizing realistic 3D whole-body grasps controlled by a sampled reaching direction. Our method first builds a ReachingField via ray-casting around the object, sampling collision-free direction vectors." />
+<meta name="description" content="Abstract Synthesizing accurate hand–object interactions (HOI) is critical for AR/VR and vision tasks.
+Existing dense–correspondence methods improve contact fidelity but lack full differentiability or generality.
+We propose CHOIR, a versatile, fully differentiable interaction field:" />
 
 
 
@@ -324,17 +326,19 @@
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Omid Taheri" />
 <meta property="og:url" content="https://otaheri.github.io/publication/2025_choir/" />
-<meta property="og:title" content="3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp) | Omid Taheri" />
-<meta property="og:description" content="Abstract We introduce CWGrasp, a framework for synthesizing realistic 3D whole-body grasps controlled by a sampled reaching direction. Our method first builds a ReachingField via ray-casting around the object, sampling collision-free direction vectors." /><meta property="og:image" content="https://otaheri.github.io/publication/2025_choir/featured.jpg" /><meta property="og:locale" content="en-us" />
+<meta property="og:title" content="A Versatile and Differentiable Hand-Object Interaction Representation | Omid Taheri" />
+<meta property="og:description" content="Abstract Synthesizing accurate hand–object interactions (HOI) is critical for AR/VR and vision tasks.
+Existing dense–correspondence methods improve contact fidelity but lack full differentiability or generality.
+We propose CHOIR, a versatile, fully differentiable interaction field:" /><meta property="og:image" content="https://otaheri.github.io/publication/2025_choir/featured.jpg" /><meta property="og:locale" content="en-us" />
 
   
     <meta
       property="article:published_time"
-      content="2025-03-01T00:00:00&#43;00:00"
+      content="2024-09-12T00:00:00&#43;00:00"
     />
   
   
-    <meta property="article:modified_time" content="2025-03-01T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2024-09-12T00:00:00&#43;00:00">
   
 
 
@@ -360,18 +364,18 @@
     "@type": "WebPage",
     "@id": "https://otaheri.github.io/publication/2025_choir/"
   },
-  "headline": "3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp)",
+  "headline": "A Versatile and Differentiable Hand-Object Interaction Representation",
   
   "image": [
     "https://otaheri.github.io/publication/2025_choir/featured.jpg"
   ],
   
-  "datePublished": "2025-03-01T00:00:00Z",
-  "dateModified": "2025-03-01T00:00:00Z",
+  "datePublished": "2024-09-12T00:00:00Z",
+  "dateModified": "2024-09-12T00:00:00Z",
   
   "author": {
     "@type": "Person",
-    "name": "Georgios Paschalidis"
+    "name": "Théo Morales"
   },
   
   "publisher": {
@@ -382,7 +386,7 @@
       "url": "https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_192x192_fill_lanczos_center_3.png"
     }
   },
-  "description": "Abstract We introduce CWGrasp, a framework for synthesizing realistic 3D whole-body grasps controlled by a sampled reaching direction. Our method first builds a ReachingField via ray-casting around the object, sampling collision-free direction vectors."
+  "description": "Abstract Synthesizing accurate hand–object interactions (HOI) is critical for AR/VR and vision tasks.\nExisting dense–correspondence methods improve contact fidelity but lack full differentiability or generality.\nWe propose CHOIR, a versatile, fully differentiable interaction field:"
 }
 </script>
 
@@ -404,7 +408,7 @@
 
 
   
-  <title>3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp) | Omid Taheri</title>
+  <title>A Versatile and Differentiable Hand-Object Interaction Representation | Omid Taheri</title>
 
   
   
@@ -879,7 +883,7 @@
 
 
 <div class="article-container pt-3">
-  <h1>3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp)</h1>
+  <h1>A Versatile and Differentiable Hand-Object Interaction Representation</h1>
 
   
 
@@ -896,11 +900,9 @@
     
 
   <span >
-      Georgios Paschalidis</span>, <span >
-      Romana Wilschut</span>, <span >
-      Dimitrije Antić</span>, <span >
+      Théo Morales</span>, <span >
       Omid Taheri</span>, <span >
-      Dimitrios Tzionas</span>
+      Gerard Lacey</span>
   </div>
   
   
@@ -911,7 +913,7 @@
     
       
     
-    March, 2025
+    September, 2024
   </span>
   
 
@@ -957,13 +959,6 @@
 </a>
 
 
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://github.com/gpaschalidis/CWGrasp" target="_blank" rel="noopener">
-  Code
-</a>
 
 
 
@@ -972,15 +967,6 @@
 
 
 
-
-
-  
-  
-    
-  
-<a class="btn btn-outline-primary btn-page-header" href="https://www.youtube.com/watch?v=d9a4C2GHIv0" target="_blank" rel="noopener">
-  Video
-</a>
 
 
 
@@ -996,7 +982,21 @@
   
     
   
-  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2408.16770" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/pdf/2409.16855.pdf" target="_blank" rel="noopener">
+    <i class="fas fa-file-pdf mr-1"></i>Paper</a>
+
+  
+  
+  
+    
+  
+  
+  
+  
+  
+    
+  
+  <a class="btn btn-outline-primary btn-page-header" href="https://arxiv.org/abs/2409.16855" target="_blank" rel="noopener">
     <i class="fas fa-scroll mr-1"></i>arXiv</a>
 
   
@@ -1010,40 +1010,9 @@
   
     
   
-  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/gpaschalidis/CWGrasp" target="_blank" rel="noopener">
+  <a class="btn btn-outline-primary btn-page-header" href="https://github.com/DubiousCactus/CHOIR" target="_blank" rel="noopener">
     <i class="fab fa-github mr-1"></i>Code</a>
 
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-  
-  <a class="btn btn-outline-primary btn-page-header" href="https://www.youtube.com/watch?v=d9a4C2GHIv0" target="_blank" rel="noopener">
-    <i class="fas fa-video mr-1"></i>Video</a>
-
-  
-  
-  
-    
-  
-  
-  
-  
-  
-    
-    
-      
-    
-  
-  <a class="btn btn-outline-primary btn-page-header" href="/" >
-    <i class="fas fa-file mr-1"></i>3DV 2025</a>
-
 
 </div>
 
@@ -1051,10 +1020,10 @@
 </div>
 
 
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 500px; max-height: 281px;">
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 418px;">
   <div style="position: relative">
-    <img src="/publication/2025_choir/featured_huf1b1a3686496990b788527b7c5c8eba4_38181_f838f07e62341bbd15e6f760b0870a4b.webp" width="500" height="281" alt="" class="featured-image">
-    <span class="article-header-caption">Teaser: Directionally Controllable Whole‐Body Grasps</span>
+    <img src="/publication/2025_choir/featured_hue33050dfb64351bd779ea4520bf883fd_500318_5fb8b99a7a7b3c935d8100ab0e2fbbe0.webp" width="720" height="418" alt="" class="featured-image">
+    <span class="article-header-caption">Teaser: CHOIR Hand-Object Interaction Field</span>
   </div>
 </div>
 
@@ -1089,7 +1058,7 @@
       <div class="col-md-10">
         <div class="row">
           <div class="col-12 col-md-3 pub-row-heading">Publication</div>
-          <div class="col-12 col-md-9">In <em>International Conference on 3D Vision (3DV) 2025</em></div>
+          <div class="col-12 col-md-9">In <em>Winter Conference on Applications of Computer Vision (WACV) 2025</em></div>
         </div>
       </div>
       <div class="col-md-1"></div>
@@ -1100,112 +1069,114 @@
     <div class="space-below"></div>
 
     <div class="article-style"><h1 id="abstract">Abstract</h1>
-<p>We introduce <strong>CWGrasp</strong>, a framework for synthesizing realistic 3D whole-body grasps controlled by a sampled reaching direction. Our method first builds a <strong>ReachingField</strong> via ray-casting around the object, sampling collision-free direction vectors. We then condition both <strong>CReach</strong> (body) and <strong>CGrasp</strong> (hand) generators on this direction for initial synthesis, followed by a lightweight <strong>optimization</strong> stage to resolve penetrations. CWGrasp handles left and right hands, runs ∼16× faster than prior work, and outperforms baselines on GRAB and ReplicaGrasp.</p>
+<p>Synthesizing accurate hand–object interactions (HOI) is critical for AR/VR and vision tasks.<br>
+Existing dense–correspondence methods improve contact fidelity but lack full differentiability or generality.<br>
+We propose <strong>CHOIR</strong>, a versatile, fully differentiable interaction field:</p>
+<ul>
+<li><strong>Unsigned distance fields</strong> encode hand &amp; object shapes continuously.</li>
+<li><strong>Gaussian contact maps</strong> capture dense hand-centric contact distributions with few parameters.<br>
+We integrate CHOIR into <strong>JointDiffusion</strong>, a diffusion model that learns CHOIR distributions for both:</li>
+</ul>
+<ol>
+<li><strong>Refinement:</strong> improves noisy reconstructions (contact F1 ↑ 5%).</li>
+<li><strong>Synthesis:</strong> generates grasps from object geometry alone (sim. displacement ↓ 46%).<br>
+JointDiffusion+CHOIR outperforms SOTA on refinement and synthesis benchmarks.</li>
+</ol>
 <h1 id="teaser">Teaser</h1>
-<img src="videos/CHOIR_teaser.mp4" class="center" />
-<p><strong>CWGrasp</strong> synthesizes controllable, whole‐body grasps by integrating geometry‐based reasoning early in the pipeline.</p>
+<video id="teaser" autoplay muted loop playsinline height="300">
+  <source src="videos/CHOIR_teaser.mp4" type="video/mp4">
+</video>
+<p style="text-align:center; margin-top:10px;">
+  <strong>CHOIR</strong> jointly represents hand and object geometries via unsigned distance fields,  
+  and captures hand-centric contact distributions with 3D Gaussians—enabling a fully differentiable  
+  and versatile hand-object interaction model.
+</p>
+<h1 id="results-carousel">Results Carousel</h1>
+<div style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/scissors_0.mp4" type="video/mp4">
+    </video>
+    <p><strong>Scissors</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/mug_4.mp4" type="video/mp4">
+    </video>
+    <p><strong>Mug</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/knife_0.mp4" type="video/mp4">
+    </video>
+    <p><strong>Knife</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/apple_0.mp4" type="video/mp4">
+    </video>
+    <p><strong>Apple</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/banana_0.mp4" type="video/mp4">
+    </video>
+    <p><strong>Banana</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/binoculars_2.mp4" type="video/mp4">
+    </video>
+    <p><strong>Binoculars</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/bowl_0.mp4" type="video/mp4">
+    </video>
+    <p><strong>Bowl</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/camera_1.mp4" type="video/mp4">
+    </video>
+    <p><strong>Camera</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/cell_phone_2.mp4" type="video/mp4">
+    </video>
+    <p><strong>Cell Phone</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/cup_2.mp4" type="video/mp4">
+    </video>
+    <p><strong>Cup</strong></p>
+  </div>
+  <div style="flex:1 1 200px; text-align:center;">
+    <video controls muted loop width="200">
+      <source src="videos/eyeglasses_2.mp4" type="video/mp4">
+    </video>
+    <p><strong>Eyeglasses</strong></p>
+  </div>
+</div>
 <h1 id="method-overview">Method Overview</h1>
-<img src="videos/joint_diff_v3.png" class="center" />
-<p>We sample a direction from <strong>ReachingField</strong>, generate a body (<strong>CReach</strong>) and hand (<strong>CGrasp</strong>) satisfying it, then optimize jointly to eliminate penetrations.</p>
-<h1 id="reachingfield">ReachingField</h1>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <div style="flex:1 1 200px; text-align:center;">
-    <video autoplay muted loop playsinline height="150">
-      <source src="videos/reachingfield_low.mp4" type="video/mp4">
-    </video>
-    <p><strong>Low‐height Object</strong></p>
-  </div>
-  <div style="flex:1 1 200px; text-align:center;">
-    <video autoplay muted loop playsinline height="150">
-      <source src="videos/reachingfield_medium.mp4" type="video/mp4">
-    </video>
-    <p><strong>Medium‐height Object</strong></p>
-  </div>
-  <div style="flex:1 1 200px; text-align:center;">
-    <video autoplay muted loop playsinline height="150">
-      <source src="videos/reachingfield_high.mp4" type="video/mp4">
-    </video>
-    <p><strong>High‐height Object</strong></p>
-  </div>
-</div>
-<h1 id="cgrasp-vs-creach">CGrasp vs. CReach</h1>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <div style="flex:1 1 200px; text-align:center;">
-    <img src="videos/cgrasp_controllability.png" style="width:100%;" />
-    <p><strong>CGrasp</strong></p>
-  </div>
-  <div style="flex:1 1 200px; text-align:center;">
-    <img src="videos/creach_controllability.png" style="width:100%;" />
-    <p><strong>CReach</strong></p>
-  </div>
-</div>
-<h1 id="optimization-comparison">Optimization Comparison</h1>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <div style="flex:1 1 200px; text-align:center;">
-    <video autoplay muted loop playsinline height="150">
-      <source src="videos/optimization/cwgrasp_optimization.mp4" type="video/mp4">
-    </video>
-    <p><strong>CWGrasp Opt.</strong></p>
-  </div>
-  <div style="flex:1 1 200px; text-align:center;">
-    <video autoplay muted loop playsinline height="150">
-      <source src="videos/optimization/flex_optimization.mp4" type="video/mp4">
-    </video>
-    <p><strong>FLEX Opt.</strong></p>
-  </div>
-</div>
-<h1 id="qualitative-results">Qualitative Results</h1>
-<p><strong>Right‐Hand Grasps</strong></p>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/scissors_0.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/mug_4.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/knife_0.mp4" type="video/mp4">
+<img src="videos/joint_diff_v3.png" class="center" alt="JointDiffusion Architecture" />
+<h1 id="static-grasp-denoising">Static Grasp Denoising</h1>
+<div style="text-align:center;">
+  <h3>Comparison: Denoising on Perturbed ContactPose</h3>
+  <video controls autoplay muted loop width="400">
+    <source src="videos/denoising.mp4" type="video/mp4">
   </video>
 </div>
-<p><strong>Medium‐height</strong></p>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/cwgrasp_wineglass.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/flex_wineglass.mp4" type="video/mp4">
-  </video>
-</div>
-<p><strong>High‐height</strong></p>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/cwgrasp_elephant.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/flex_elephant.mp4" type="video/mp4">
-  </video>
-</div>
-<h1 id="lefthand-grasps">Left‐Hand Grasps</h1>
-<div style="display:flex; gap:10px; justify-content:center; flex-wrap: wrap;">
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/cwgrasp_left_binoculars.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/cwgrasp_left_camera.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/cwgrasp_left_hammer.mp4" type="video/mp4">
-  </video>
-  <video controls autoplay muted loop playsinline height="150">
-    <source src="videos/cwgrasp_left_wineglass.mp4" type="video/mp4">
-  </video>
-</div>
+<h1 id="static-grasp-synthesis">Static Grasp Synthesis</h1>
+<p><em>Reuses the above carousel of 11 object-specific grasp synthesis videos.</em></p>
 <h1 id="bibtex">BibTeX</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bibtex" data-lang="bibtex"><span class="line"><span class="cl"><span class="nc">@inproceedings</span><span class="p">{</span><span class="nl">paschalidis2025cwgrasp</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="na">title</span>     <span class="p">=</span> <span class="s">{{3D} Whole-Body Grasp Synthesis with Directional Controllability}</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="na">author</span>    <span class="p">=</span> <span class="s">{Paschalidis, Georgios and Wilschut, Romana and Antić, Dimitrije and Taheri, Omid and Tzionas, Dimitrios}</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="na">booktitle</span> <span class="p">=</span> <span class="s">{International Conference on 3D Vision (3DV)}</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="na">year</span>      <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bibtex" data-lang="bibtex"><span class="line"><span class="cl"><span class="nc">@article</span><span class="p">{</span><span class="nl">morales2024choir</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">author</span>  <span class="p">=</span> <span class="s">{Morales, Théo and Taheri, Omid and Lacey, Gerard}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">title</span>   <span class="p">=</span> <span class="s">{A Versatile and Differentiable Hand-Object Interaction Representation}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">journal</span> <span class="p">=</span> <span class="s">{Winter Conference on Applications of Computer Vision (WACV)}</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="na">year</span>    <span class="p">=</span> <span class="s">{2025}</span><span class="p">,</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></div>
 
@@ -1232,7 +1203,7 @@
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;text=3D&#43;Whole-Body&#43;Grasp&#43;Synthesis&#43;with&#43;Directional&#43;Controllability&#43;%28CWGrasp%29" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;text=A&#43;Versatile&#43;and&#43;Differentiable&#43;Hand-Object&#43;Interaction&#43;Representation" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1249,7 +1220,7 @@
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;t=3D&#43;Whole-Body&#43;Grasp&#43;Synthesis&#43;with&#43;Directional&#43;Controllability&#43;%28CWGrasp%29" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;t=A&#43;Versatile&#43;and&#43;Differentiable&#43;Hand-Object&#43;Interaction&#43;Representation" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1268,7 +1239,7 @@
         
       
       <li>
-        <a href="mailto:?subject=3D%20Whole-Body%20Grasp%20Synthesis%20with%20Directional%20Controllability%20%28CWGrasp%29&amp;body=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=A%20Versatile%20and%20Differentiable%20Hand-Object%20Interaction%20Representation&amp;body=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1285,7 +1256,7 @@
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;title=3D&#43;Whole-Body&#43;Grasp&#43;Synthesis&#43;with&#43;Directional&#43;Controllability&#43;%28CWGrasp%29" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;title=A&#43;Versatile&#43;and&#43;Differentiable&#43;Hand-Object&#43;Interaction&#43;Representation" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1302,7 +1273,7 @@
       
       
       <li>
-        <a href="whatsapp://send?text=3D&#43;Whole-Body&#43;Grasp&#43;Synthesis&#43;with&#43;Directional&#43;Controllability&#43;%28CWGrasp%29%20https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=A&#43;Versatile&#43;and&#43;Differentiable&#43;Hand-Object&#43;Interaction&#43;Representation%20https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1319,7 +1290,7 @@
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;title=3D&#43;Whole-Body&#43;Grasp&#43;Synthesis&#43;with&#43;Directional&#43;Controllability&#43;%28CWGrasp%29" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fotaheri.github.io%2Fpublication%2F2025_choir%2F&amp;title=A&#43;Versatile&#43;and&#43;Differentiable&#43;Hand-Object&#43;Interaction&#43;Representation" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1338,18 +1309,6 @@
 
 
   
-  
-    
-
-
-
-
-  
-    
-
-
-
-
   
     
 

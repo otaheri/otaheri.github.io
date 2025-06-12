@@ -56,10 +56,10 @@
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Method Overview&#34; srcset=&#34;
-               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_70ff8ef1363f915d952cf7c4971c2eb7.webp 400w,
-               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_1d3f4671cd6450143828026c5f9bf9ca.webp 760w,
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_81607cd6eb15fe4e64e1cd1ab0502830.webp 400w,
+               /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_c9b9ef44694fd392450ca1e4c4c08842.webp 760w,
                /publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_70ff8ef1363f915d952cf7c4971c2eb7.webp&#34;
+               src=&#34;https://otaheri.github.io/publication/2025_intervlm/videos/method_hu922168d7cfb8605d8c39fbecbc354498_292851_81607cd6eb15fe4e64e1cd1ab0502830.webp&#34;
                width=&#34;760&#34;
                height=&#34;308&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -139,117 +139,119 @@ For licensing: &lt;a href=&#34;mailto:ps-licensing@tue.mpg.de&#34;&gt;ps-licensi
     </item>
     
     <item>
-      <title>3D Whole-Body Grasp Synthesis with Directional Controllability (CWGrasp)</title>
+      <title>A Versatile and Differentiable Hand-Object Interaction Representation</title>
       <link>https://otaheri.github.io/publication/2025_choir/</link>
-      <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 12 Sep 2024 00:00:00 +0000</pubDate>
       <guid>https://otaheri.github.io/publication/2025_choir/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;We introduce &lt;strong&gt;CWGrasp&lt;/strong&gt;, a framework for synthesizing realistic 3D whole-body grasps controlled by a sampled reaching direction. Our method first builds a &lt;strong&gt;ReachingField&lt;/strong&gt; via ray-casting around the object, sampling collision-free direction vectors. We then condition both &lt;strong&gt;CReach&lt;/strong&gt; (body) and &lt;strong&gt;CGrasp&lt;/strong&gt; (hand) generators on this direction for initial synthesis, followed by a lightweight &lt;strong&gt;optimization&lt;/strong&gt; stage to resolve penetrations. CWGrasp handles left and right hands, runs ∼16× faster than prior work, and outperforms baselines on GRAB and ReplicaGrasp.&lt;/p&gt;
+&lt;p&gt;Synthesizing accurate hand–object interactions (HOI) is critical for AR/VR and vision tasks.&lt;br&gt;
+Existing dense–correspondence methods improve contact fidelity but lack full differentiability or generality.&lt;br&gt;
+We propose &lt;strong&gt;CHOIR&lt;/strong&gt;, a versatile, fully differentiable interaction field:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Unsigned distance fields&lt;/strong&gt; encode hand &amp;amp; object shapes continuously.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gaussian contact maps&lt;/strong&gt; capture dense hand-centric contact distributions with few parameters.&lt;br&gt;
+We integrate CHOIR into &lt;strong&gt;JointDiffusion&lt;/strong&gt;, a diffusion model that learns CHOIR distributions for both:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Refinement:&lt;/strong&gt; improves noisy reconstructions (contact F1 ↑ 5%).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Synthesis:&lt;/strong&gt; generates grasps from object geometry alone (sim. displacement ↓ 46%).&lt;br&gt;
+JointDiffusion+CHOIR outperforms SOTA on refinement and synthesis benchmarks.&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&#34;teaser&#34;&gt;Teaser&lt;/h1&gt;
-&lt;img src=&#34;videos/CHOIR_teaser.mp4&#34; class=&#34;center&#34; /&gt;
-&lt;p&gt;&lt;strong&gt;CWGrasp&lt;/strong&gt; synthesizes controllable, whole‐body grasps by integrating geometry‐based reasoning early in the pipeline.&lt;/p&gt;
+&lt;video id=&#34;teaser&#34; autoplay muted loop playsinline height=&#34;300&#34;&gt;
+  &lt;source src=&#34;videos/CHOIR_teaser.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;/video&gt;
+&lt;p style=&#34;text-align:center; margin-top:10px;&#34;&gt;
+  &lt;strong&gt;CHOIR&lt;/strong&gt; jointly represents hand and object geometries via unsigned distance fields,  
+  and captures hand-centric contact distributions with 3D Gaussians—enabling a fully differentiable  
+  and versatile hand-object interaction model.
+&lt;/p&gt;
+&lt;h1 id=&#34;results-carousel&#34;&gt;Results Carousel&lt;/h1&gt;
+&lt;div style=&#34;display:flex; flex-wrap:wrap; gap:10px; justify-content:center;&#34;&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/scissors_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Scissors&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/mug_4.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Mug&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/knife_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Knife&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/apple_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Apple&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/banana_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Banana&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/binoculars_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Binoculars&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/bowl_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Bowl&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/camera_1.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Camera&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cell_phone_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Cell Phone&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/cup_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Cup&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
+    &lt;video controls muted loop width=&#34;200&#34;&gt;
+      &lt;source src=&#34;videos/eyeglasses_2.mp4&#34; type=&#34;video/mp4&#34;&gt;
+    &lt;/video&gt;
+    &lt;p&gt;&lt;strong&gt;Eyeglasses&lt;/strong&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;method-overview&#34;&gt;Method Overview&lt;/h1&gt;
-&lt;img src=&#34;videos/joint_diff_v3.png&#34; class=&#34;center&#34; /&gt;
-&lt;p&gt;We sample a direction from &lt;strong&gt;ReachingField&lt;/strong&gt;, generate a body (&lt;strong&gt;CReach&lt;/strong&gt;) and hand (&lt;strong&gt;CGrasp&lt;/strong&gt;) satisfying it, then optimize jointly to eliminate penetrations.&lt;/p&gt;
-&lt;h1 id=&#34;reachingfield&#34;&gt;ReachingField&lt;/h1&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;video autoplay muted loop playsinline height=&#34;150&#34;&gt;
-      &lt;source src=&#34;videos/reachingfield_low.mp4&#34; type=&#34;video/mp4&#34;&gt;
-    &lt;/video&gt;
-    &lt;p&gt;&lt;strong&gt;Low‐height Object&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;video autoplay muted loop playsinline height=&#34;150&#34;&gt;
-      &lt;source src=&#34;videos/reachingfield_medium.mp4&#34; type=&#34;video/mp4&#34;&gt;
-    &lt;/video&gt;
-    &lt;p&gt;&lt;strong&gt;Medium‐height Object&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;video autoplay muted loop playsinline height=&#34;150&#34;&gt;
-      &lt;source src=&#34;videos/reachingfield_high.mp4&#34; type=&#34;video/mp4&#34;&gt;
-    &lt;/video&gt;
-    &lt;p&gt;&lt;strong&gt;High‐height Object&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;cgrasp-vs-creach&#34;&gt;CGrasp vs. CReach&lt;/h1&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;img src=&#34;videos/cgrasp_controllability.png&#34; style=&#34;width:100%;&#34; /&gt;
-    &lt;p&gt;&lt;strong&gt;CGrasp&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;img src=&#34;videos/creach_controllability.png&#34; style=&#34;width:100%;&#34; /&gt;
-    &lt;p&gt;&lt;strong&gt;CReach&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;optimization-comparison&#34;&gt;Optimization Comparison&lt;/h1&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;video autoplay muted loop playsinline height=&#34;150&#34;&gt;
-      &lt;source src=&#34;videos/optimization/cwgrasp_optimization.mp4&#34; type=&#34;video/mp4&#34;&gt;
-    &lt;/video&gt;
-    &lt;p&gt;&lt;strong&gt;CWGrasp Opt.&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-  &lt;div style=&#34;flex:1 1 200px; text-align:center;&#34;&gt;
-    &lt;video autoplay muted loop playsinline height=&#34;150&#34;&gt;
-      &lt;source src=&#34;videos/optimization/flex_optimization.mp4&#34; type=&#34;video/mp4&#34;&gt;
-    &lt;/video&gt;
-    &lt;p&gt;&lt;strong&gt;FLEX Opt.&lt;/strong&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;qualitative-results&#34;&gt;Qualitative Results&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;Right‐Hand Grasps&lt;/strong&gt;&lt;/p&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/scissors_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/mug_4.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/knife_0.mp4&#34; type=&#34;video/mp4&#34;&gt;
+&lt;img src=&#34;videos/joint_diff_v3.png&#34; class=&#34;center&#34; alt=&#34;JointDiffusion Architecture&#34; /&gt;
+&lt;h1 id=&#34;static-grasp-denoising&#34;&gt;Static Grasp Denoising&lt;/h1&gt;
+&lt;div style=&#34;text-align:center;&#34;&gt;
+  &lt;h3&gt;Comparison: Denoising on Perturbed ContactPose&lt;/h3&gt;
+  &lt;video controls autoplay muted loop width=&#34;400&#34;&gt;
+    &lt;source src=&#34;videos/denoising.mp4&#34; type=&#34;video/mp4&#34;&gt;
   &lt;/video&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Medium‐height&lt;/strong&gt;&lt;/p&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/cwgrasp_wineglass.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/flex_wineglass.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;High‐height&lt;/strong&gt;&lt;/p&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/cwgrasp_elephant.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/flex_elephant.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-&lt;/div&gt;
-&lt;h1 id=&#34;lefthand-grasps&#34;&gt;Left‐Hand Grasps&lt;/h1&gt;
-&lt;div style=&#34;display:flex; gap:10px; justify-content:center; flex-wrap: wrap;&#34;&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/cwgrasp_left_binoculars.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/cwgrasp_left_camera.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/cwgrasp_left_hammer.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-  &lt;video controls autoplay muted loop playsinline height=&#34;150&#34;&gt;
-    &lt;source src=&#34;videos/cwgrasp_left_wineglass.mp4&#34; type=&#34;video/mp4&#34;&gt;
-  &lt;/video&gt;
-&lt;/div&gt;
+&lt;h1 id=&#34;static-grasp-synthesis&#34;&gt;Static Grasp Synthesis&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Reuses the above carousel of 11 object-specific grasp synthesis videos.&lt;/em&gt;&lt;/p&gt;
 &lt;h1 id=&#34;bibtex&#34;&gt;BibTeX&lt;/h1&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@inproceedings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;paschalidis2025cwgrasp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;     &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{{3D} Whole-Body Grasp Synthesis with Directional Controllability}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Paschalidis, Georgios and Wilschut, Romana and Antić, Dimitrije and Taheri, Omid and Tzionas, Dimitrios}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;booktitle&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{International Conference on 3D Vision (3DV)}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bibtex&#34; data-lang=&#34;bibtex&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nc&#34;&gt;@article&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;morales2024choir&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;author&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Morales, Théo and Taheri, Omid and Lacey, Gerard}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;title&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{A Versatile and Differentiable Hand-Object Interaction Representation}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;journal&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{Winter Conference on Applications of Computer Vision (WACV)}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;na&#34;&gt;year&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;{2025}&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
@@ -476,10 +478,10 @@ Code and models: &lt;a href=&#34;https://gpaschalidis.github.io/cwgrasp&#34; tar
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Method&#34; srcset=&#34;
-               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_49d444ef9c309a759cf8d6efbf963403.webp 400w,
-               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_7afe326129f5b23a5b4d39a59a00e73a.webp 760w,
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_6648189e2130824ce8be7d8a06e44028.webp 400w,
+               /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_e80f1315be66dc761e2a20742cd211a8.webp 760w,
                /publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://otaheri.github.io/publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_49d444ef9c309a759cf8d6efbf963403.webp&#34;
+               src=&#34;https://otaheri.github.io/publication/2024_wandr/videos/method_hue78d31216067689eb0e3a44cba1c6d3b_145102_6648189e2130824ce8be7d8a06e44028.webp&#34;
                width=&#34;760&#34;
                height=&#34;259&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
