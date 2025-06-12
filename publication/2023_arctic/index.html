@@ -10,7 +10,7 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.9.0 for Hugo" />
   
 
   
@@ -70,14 +70,14 @@
 
   
 
-  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
 
   
   
   
     
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -212,7 +212,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.7cecf179e32b48c11651051f521dba58.css" />
+  <link rel="stylesheet" href="/css/wowchemy.7c66feb5d800643487a0d7896d3ca491.css" />
 
   
   
@@ -237,44 +237,6 @@
 
 
 
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85461459-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));  
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-85461459-1', {});
-  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
-
-  
-  document.addEventListener('click', onClickCallback, false);
-</script>
 
 
 
@@ -354,6 +316,12 @@
   <meta property="twitter:site" content="@omidtaherii" />
   <meta property="twitter:creator" content="@omidtaherii" />
 <meta property="twitter:image" content="https://otaheri.github.io/publication/2023_arctic/featured.jpg" />
+
+
+
+  
+
+<meta property="og:type" content="article" />
 <meta property="og:site_name" content="Omid Taheri" />
 <meta property="og:url" content="https://otaheri.github.io/publication/2023_arctic/" />
 <meta property="og:title" content="ARCTIC: A Dataset for Dexterous Bimanual Hand-Object Manipulation | Omid Taheri" />
@@ -467,7 +435,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.74aedfae60bb49ca67a368a90c9bbab5.js"></script>
+  <script src="/js/wowchemy-init.min.93531aebe67b54bc51e02adf38549042.js"></script>
 
   
 
@@ -874,10 +842,10 @@
     
 
 
-
-
-
-
+  
+    
+    
+  
 
 
 <div class="pub">
@@ -907,6 +875,7 @@
 
   
   
+
 
 
 <div class="article-container pt-3">
@@ -1112,7 +1081,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 336px;">
   <div style="position: relative">
-    <img src="/publication/2023_arctic/featured_hu2abe15513aa96262a5ffefaa1619f0ff_217249_720x2500_fit_q75_h2_lanczos.webp" width="720" height="336" alt="" class="featured-image">
+    <img src="/publication/2023_arctic/featured_hu2abe15513aa96262a5ffefaa1619f0ff_217249_71a96f38128efbf05493ec56d9eacbde.webp" width="720" height="336" alt="" class="featured-image">
     <span class="article-header-caption">Teaser</span>
   </div>
 </div>
@@ -1132,7 +1101,7 @@
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
             <a href="/publication/#1">
-              Conference paper
+              1
             </a>
           </div>
         </div>
@@ -1257,12 +1226,12 @@
   </div>
 </div>
 <h1 id="citation">Citation</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@inproceedings{fan2023arctic,
-</span></span><span class="line"><span class="cl">  title = {{ARCTIC}: A Dataset for Dexterous Bimanual Hand-Object Manipulation},
-</span></span><span class="line"><span class="cl">  author = {Fan, Zicong and Taheri, Omid and Tzionas, Dimitrios and Kocabas, Muhammed and Kaufmann, Manuel and Black, Michael J. and Hilliges, Otmar},
-</span></span><span class="line"><span class="cl">  booktitle = {Proceedings IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-</span></span><span class="line"><span class="cl">  year = {2023}
-</span></span><span class="line"><span class="cl">}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="err">@</span><span class="n">inproceedings</span><span class="p">{</span><span class="n">fan2023arctic</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">ARCTIC</span><span class="p">}:</span> <span class="n">A</span> <span class="n">Dataset</span> <span class="k">for</span> <span class="n">Dexterous</span> <span class="n">Bimanual</span> <span class="n">Hand</span><span class="o">-</span><span class="nc">Object</span> <span class="n">Manipulation</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Fan</span><span class="p">,</span> <span class="n">Zicong</span> <span class="ow">and</span> <span class="n">Taheri</span><span class="p">,</span> <span class="n">Omid</span> <span class="ow">and</span> <span class="n">Tzionas</span><span class="p">,</span> <span class="n">Dimitrios</span> <span class="ow">and</span> <span class="n">Kocabas</span><span class="p">,</span> <span class="n">Muhammed</span> <span class="ow">and</span> <span class="n">Kaufmann</span><span class="p">,</span> <span class="n">Manuel</span> <span class="ow">and</span> <span class="n">Black</span><span class="p">,</span> <span class="n">Michael</span> <span class="n">J</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Hilliges</span><span class="p">,</span> <span class="n">Otmar</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">Proceedings</span> <span class="n">IEEE</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="ow">and</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">CVPR</span><span class="p">)},</span>
+</span></span><span class="line"><span class="cl">  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2023</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl">    
 </span></span></code></pre></div></div>
 
@@ -1686,7 +1655,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+<script src="/js/vendor-bundle.min.f64289d8217e08e3afcd597d60836062.js"></script>
 
 
 
@@ -1752,8 +1721,17 @@
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
   <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
@@ -1770,7 +1748,7 @@
   
 
 
-<script src="/en/js/wowchemy.min.2874310ae8b20e08948b8e82aa4b36db.js"></script>
+<script src="/en/js/wowchemy.min.82efd0fe1287c491a256693d281ecc98.js"></script>
 
 
 
@@ -1806,7 +1784,7 @@
 </div>
 
 
-  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+  <script src="/js/wowchemy-publication.9137013a66774049159934c29c3f0205.js" type="module"></script>
 
 
 

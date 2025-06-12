@@ -10,7 +10,7 @@
   
   
   
-    <meta name="generator" content="Wowchemy 5.7.0 for Hugo" />
+    <meta name="generator" content="Wowchemy 5.9.0 for Hugo" />
   
 
   
@@ -70,14 +70,14 @@
 
   
 
-  <link rel="stylesheet" href="/css/vendor-bundle.min.16f785cdb553c8c4431db6775122af35.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/css/vendor-bundle.min.047268c6dd09ad74ba54a0ba71837064.css" media="print" onload="this.media='all'">
 
   
   
   
     
     
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css" integrity="sha512-KlJCpRsLf+KKu2VQa5vmRuClRFjxc5lXO03ixZt82HZUk41+1I0bD8KBSA0fY290ayMfWYI9udIqeOWSu1/uZg==" crossorigin="anonymous" media="print" onload="this.media='all'">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css" integrity="sha512-IW0nhlW5MgNydsXJO40En2EoCkTTjZhI3yuODrZIc8cQ4h1XcF53PsqDHa09NqnkXuIe0Oiyyj171BqZFwISBw==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -212,7 +212,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.7cecf179e32b48c11651051f521dba58.css" />
+  <link rel="stylesheet" href="/css/wowchemy.7c66feb5d800643487a0d7896d3ca491.css" />
 
   
   
@@ -237,44 +237,6 @@
 
 
 
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-85461459-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-      dataLayer.push(arguments);
-  }
-
-  function trackOutboundLink(url, target) {
-    gtag('event', 'click', {
-         'event_category': 'outbound',
-         'event_label': url,
-         'transport_type': 'beacon',
-         'event_callback': function () {
-           if (target !== '_blank') {
-             document.location = url;
-           }
-         }
-    });
-    console.debug("Outbound link clicked: " + url);
-  }
-
-  function onClickCallback(event) {
-    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
-      return;
-    }
-    trackOutboundLink(event.target, event.target.getAttribute('target'));  
-  }
-
-  gtag('js', new Date());
-  gtag('config', 'UA-85461459-1', {});
-  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
-
-  
-  document.addEventListener('click', onClickCallback, false);
-</script>
 
 
 
@@ -354,6 +316,12 @@
   <meta property="twitter:site" content="@omidtaherii" />
   <meta property="twitter:creator" content="@omidtaherii" />
 <meta property="twitter:image" content="https://otaheri.github.io/publication/2022_intercap/featured.jpg" />
+
+
+
+  
+
+<meta property="og:type" content="article" />
 <meta property="og:site_name" content="Omid Taheri" />
 <meta property="og:url" content="https://otaheri.github.io/publication/2022_intercap/" />
 <meta property="og:title" content="InterCap: Joint Markerless 3D Tracking of Humans and Objects in Interaction | Omid Taheri" />
@@ -467,7 +435,7 @@
   
   
   
-  <script src="/js/wowchemy-init.min.74aedfae60bb49ca67a368a90c9bbab5.js"></script>
+  <script src="/js/wowchemy-init.min.93531aebe67b54bc51e02adf38549042.js"></script>
 
   
 
@@ -874,10 +842,10 @@
     
 
 
-
-
-
-
+  
+    
+    
+  
 
 
 <div class="pub">
@@ -907,6 +875,7 @@
 
   
   
+
 
 
 <div class="article-container pt-3">
@@ -1123,7 +1092,7 @@
 
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 267px;">
   <div style="position: relative">
-    <img src="/publication/2022_intercap/featured_hu68a2a018d3990d2e4634eec4898b14f6_146998_720x2500_fit_q75_h2_lanczos.webp" width="720" height="267" alt="" class="featured-image">
+    <img src="/publication/2022_intercap/featured_hu68a2a018d3990d2e4634eec4898b14f6_146998_c7b17c88dc99ea6244493cadc5c70afd.webp" width="720" height="267" alt="" class="featured-image">
     <span class="article-header-caption">Teaser</span>
   </div>
 </div>
@@ -1143,7 +1112,7 @@
           <div class="col-12 col-md-3 pub-row-heading">Type</div>
           <div class="col-12 col-md-9">
             <a href="/publication/#1">
-              Conference paper
+              1
             </a>
           </div>
         </div>
@@ -1180,26 +1149,26 @@
 <h1 id="data">Data</h1>
 <p>Please register and accept the License agreement on <a href="https://intercap.is.tue.mpg.de" target="_blank" rel="noopener">InterCap</a> website in order to get access to the dataset.</p>
 <h1 id="citation">Citation</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">@article{huang2024intercap,
-</span></span><span class="line"><span class="cl">title = {{InterCap}: Joint Markerless {3D} Tracking of Humans and Objects in Interaction from Multi-view {RGB-D} Images},
-</span></span><span class="line"><span class="cl">author = {Huang, Yinghao and Taheri, Omid and Black, Michael J. and Tzionas, Dimitrios},
-</span></span><span class="line"><span class="cl">journal = {{International Journal of Computer Vision (IJCV)}},
-</span></span><span class="line"><span class="cl">volume = {},
-</span></span><span class="line"><span class="cl">number = {},
-</span></span><span class="line"><span class="cl">pages = {},
-</span></span><span class="line"><span class="cl">doi = {10.1007/s11263-024-01984-1},
-</span></span><span class="line"><span class="cl">year = {2024}
-</span></span><span class="line"><span class="cl">}
-</span></span><span class="line"><span class="cl">@inproceedings{huang2022intercap,
-</span></span><span class="line"><span class="cl">title = {{InterCap}: {J}oint Markerless {3D} Tracking of Humans and Objects in Interaction},
-</span></span><span class="line"><span class="cl">author = {Huang, Yinghao and Taheri, Omid and Black, Michael J. and Tzionas, Dimitrios},
-</span></span><span class="line"><span class="cl">booktitle = {{German Conference on Pattern Recognition (GCPR)}},
-</span></span><span class="line"><span class="cl">volume = {13485},
-</span></span><span class="line"><span class="cl">pages = {281--299},
-</span></span><span class="line"><span class="cl">year = {2022},
-</span></span><span class="line"><span class="cl">organization = {Springer},
-</span></span><span class="line"><span class="cl">series = {Lecture Notes in Computer Science}
-</span></span><span class="line"><span class="cl">}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript" data-lang="gdscript"><span class="line"><span class="cl"><span class="err">@</span><span class="n">article</span><span class="p">{</span><span class="n">huang2024intercap</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">InterCap</span><span class="p">}:</span> <span class="n">Joint</span> <span class="n">Markerless</span> <span class="p">{</span><span class="mi">3</span><span class="n">D</span><span class="p">}</span> <span class="n">Tracking</span> <span class="n">of</span> <span class="n">Humans</span> <span class="ow">and</span> <span class="n">Objects</span> <span class="ow">in</span> <span class="n">Interaction</span> <span class="n">from</span> <span class="n">Multi</span><span class="o">-</span><span class="n">view</span> <span class="p">{</span><span class="n">RGB</span><span class="o">-</span><span class="n">D</span><span class="p">}</span> <span class="n">Images</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Huang</span><span class="p">,</span> <span class="n">Yinghao</span> <span class="ow">and</span> <span class="n">Taheri</span><span class="p">,</span> <span class="n">Omid</span> <span class="ow">and</span> <span class="n">Black</span><span class="p">,</span> <span class="n">Michael</span> <span class="n">J</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Tzionas</span><span class="p">,</span> <span class="n">Dimitrios</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">journal</span> <span class="o">=</span> <span class="p">{{</span><span class="n">International</span> <span class="n">Journal</span> <span class="n">of</span> <span class="n">Computer</span> <span class="n">Vision</span> <span class="p">(</span><span class="n">IJCV</span><span class="p">)}},</span>
+</span></span><span class="line"><span class="cl"><span class="n">volume</span> <span class="o">=</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl"><span class="n">number</span> <span class="o">=</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl"><span class="n">pages</span> <span class="o">=</span> <span class="p">{},</span>
+</span></span><span class="line"><span class="cl"><span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="mf">10.1007</span><span class="o">/</span><span class="n">s11263</span><span class="o">-</span><span class="mi">024</span><span class="o">-</span><span class="mi">01984</span><span class="o">-</span><span class="mi">1</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2024</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="err">@</span><span class="n">inproceedings</span><span class="p">{</span><span class="n">huang2022intercap</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">InterCap</span><span class="p">}:</span> <span class="p">{</span><span class="n">J</span><span class="p">}</span><span class="n">oint</span> <span class="n">Markerless</span> <span class="p">{</span><span class="mi">3</span><span class="n">D</span><span class="p">}</span> <span class="n">Tracking</span> <span class="n">of</span> <span class="n">Humans</span> <span class="ow">and</span> <span class="n">Objects</span> <span class="ow">in</span> <span class="n">Interaction</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Huang</span><span class="p">,</span> <span class="n">Yinghao</span> <span class="ow">and</span> <span class="n">Taheri</span><span class="p">,</span> <span class="n">Omid</span> <span class="ow">and</span> <span class="n">Black</span><span class="p">,</span> <span class="n">Michael</span> <span class="n">J</span><span class="o">.</span> <span class="ow">and</span> <span class="n">Tzionas</span><span class="p">,</span> <span class="n">Dimitrios</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">booktitle</span> <span class="o">=</span> <span class="p">{{</span><span class="n">German</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Pattern</span> <span class="n">Recognition</span> <span class="p">(</span><span class="n">GCPR</span><span class="p">)}},</span>
+</span></span><span class="line"><span class="cl"><span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="mi">13485</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="mi">281</span><span class="o">--</span><span class="mi">299</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2022</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">organization</span> <span class="o">=</span> <span class="p">{</span><span class="n">Springer</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="n">series</span> <span class="o">=</span> <span class="p">{</span><span class="n">Lecture</span> <span class="n">Notes</span> <span class="ow">in</span> <span class="n">Computer</span> <span class="n">Science</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></div>
 
     
@@ -1604,7 +1573,7 @@
   
 
 
-<script src="/js/vendor-bundle.min.d26509351aa0ff874abbee824e982e9b.js"></script>
+<script src="/js/vendor-bundle.min.f64289d8217e08e3afcd597d60836062.js"></script>
 
 
 
@@ -1670,8 +1639,17 @@
 
 
 
-<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
+
+
+
+
+
+
+
+
+
+<script id="page-data" type="application/json">{"use_headroom":true}</script>
 
 
   <script src="/js/wowchemy-headroom.db4755770454eb63685f8de785c0a172.js" type="module"></script>
@@ -1688,7 +1666,7 @@
   
 
 
-<script src="/en/js/wowchemy.min.2874310ae8b20e08948b8e82aa4b36db.js"></script>
+<script src="/en/js/wowchemy.min.82efd0fe1287c491a256693d281ecc98.js"></script>
 
 
 
@@ -1724,7 +1702,7 @@
 </div>
 
 
-  <script src="/js/wowchemy-publication.68f8d7090562ca65fc6d3cb3f8f2d2cb.js" type="module"></script>
+  <script src="/js/wowchemy-publication.9137013a66774049159934c29c3f0205.js" type="module"></script>
 
 
 
