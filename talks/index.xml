@@ -1,16 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Talks | Omid Taheri</title>
-    <link>https://otaheri.github.io/talks/</link>
-      <atom:link href="https://otaheri.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
-    <description>Talks</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
-    <image>
-      <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
-      <title>Talks</title>
-      <link>https://otaheri.github.io/talks/</link>
-    </image>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Talks | Omid Taheri</title><link>https://otaheri.github.io/talks/</link><atom:link href="https://otaheri.github.io/talks/index.xml" rel="self" type="application/rss+xml"/><description>Talks</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><image><url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url><title>Talks</title><link>https://otaheri.github.io/talks/</link></image></channel></rss>

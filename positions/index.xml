@@ -1,48 +1,24 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Open Positions | Omid Taheri</title>
-    <link>https://otaheri.github.io/positions/</link>
-      <atom:link href="https://otaheri.github.io/positions/index.xml" rel="self" type="application/rss+xml" />
-    <description>Open Positions</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 12:00:00 +0000</lastBuildDate>
-    <image>
-      <url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url>
-      <title>Open Positions</title>
-      <link>https://otaheri.github.io/positions/</link>
-    </image>
-    
-    <item>
-      <title>Internship Opportunity in Our Research Group</title>
-      <link>https://otaheri.github.io/positions/ps_intern_videogen/</link>
-      <pubDate>Mon, 15 Jul 2024 12:00:00 +0000</pubDate>
-      <guid>https://otaheri.github.io/positions/ps_intern_videogen/</guid>
-      <description>&lt;!-- ## Internship Opportunity --&gt;
-&lt;p&gt;We are currently seeking passionate and dedicated interns to join our esteemed research group. This is a unique opportunity to work on pioneering research projects and gain invaluable experience in cutting-edge technologies.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Areas of Research:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Human Motion Synthesis&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;Object Interaction&lt;/li&gt;
-&lt;li&gt;Scene Interaction&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Reconstruction from Videos/Images&lt;/strong&gt;:
-&lt;ul&gt;
-&lt;li&gt;Humand and Objects&lt;/li&gt;
-&lt;li&gt;Using Video Datasets for 3D Synthesis&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Video/3D Generation&lt;/strong&gt;:&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;3D Representations&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Collecting Rich Datasets&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;LLMs for Above Topics&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We are looking for candidates who have experience and a strong interest in these areas, preferably with papers in top-tier conferences such as CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, and others.&lt;/p&gt;
-&lt;p&gt;This is an excellent opportunity to collaborate with leading experts and contribute to groundbreaking research. If you are interested, please &lt;a href=&#34;mailto:omid.taheri@tue.mpg.de&#34;&gt;contact me&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- ![Internship](path/to/your/image.jpg) Replace with the actual path to the image --&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Open Positions | Omid Taheri</title><link>https://otaheri.github.io/positions/</link><atom:link href="https://otaheri.github.io/positions/index.xml" rel="self" type="application/rss+xml"/><description>Open Positions</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 15 Jul 2024 12:00:00 +0000</lastBuildDate><image><url>https://otaheri.github.io/media/icon_hu9b7be29231a05e8610b49408e09cf277_125589_512x512_fill_lanczos_center_3.png</url><title>Open Positions</title><link>https://otaheri.github.io/positions/</link></image><item><title>Internship Opportunity in Our Research Group</title><link>https://otaheri.github.io/positions/ps_intern_videogen/</link><pubDate>Mon, 15 Jul 2024 12:00:00 +0000</pubDate><guid>https://otaheri.github.io/positions/ps_intern_videogen/</guid><description>&lt;!-- ## Internship Opportunity -->
+&lt;p>We are currently seeking passionate and dedicated interns to join our esteemed research group. This is a unique opportunity to work on pioneering research projects and gain invaluable experience in cutting-edge technologies.&lt;/p>
+&lt;p>&lt;strong>Areas of Research:&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>Human Motion Synthesis&lt;/strong>:
+&lt;ul>
+&lt;li>Object Interaction&lt;/li>
+&lt;li>Scene Interaction&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Reconstruction from Videos/Images&lt;/strong>:
+&lt;ul>
+&lt;li>Humand and Objects&lt;/li>
+&lt;li>Using Video Datasets for 3D Synthesis&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Video/3D Generation&lt;/strong>:&lt;/li>
+&lt;li>&lt;strong>3D Representations&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>Collecting Rich Datasets&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>LLMs for Above Topics&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>We are looking for candidates who have experience and a strong interest in these areas, preferably with papers in top-tier conferences such as CVPR, ICCV, ECCV, ICML, NeurIPS, ICLR, and others.&lt;/p>
+&lt;p>This is an excellent opportunity to collaborate with leading experts and contribute to groundbreaking research. If you are interested, please &lt;a href="mailto:omid.taheri@tue.mpg.de">contact me&lt;/a>.&lt;/p>
+&lt;!-- ![Internship](path/to/your/image.jpg) Replace with the actual path to the image --></description></item></channel></rss>
