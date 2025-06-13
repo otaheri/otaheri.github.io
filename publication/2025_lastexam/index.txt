@@ -8,7 +8,7 @@ view:        2
 doi:         ''
 
 publication_types: ['1']
-publication:      "arXiv preprint arXiv:2504.XXXXX"
+publication:      "arXiv preprint arXiv:2501.14249"
 publication_short: '*arXiv 2025*'
 
 image:
@@ -16,11 +16,11 @@ image:
   caption: 'Benchmark difficulty compared to existing academic tests'
 
 tags: ["benchmark","LLM","evaluation"]
-authors: ["otaheri", "et al."]
+authors: ["otaheri", "& Many Others"]
 
-uurl_pdf:    'https://arxiv.org/abs/2504.XXXXX'
+uurl_pdf:    ''
 url_code:    ''
-url_dataset: 'https://scale.com/leaderboard/humanitys_last_exam'
+url_dataset: ''
 url_poster:  ''
 url_project: ''
 url_slides:  ''
@@ -29,9 +29,21 @@ url_video:   ''
 
 links:
   - icon_pack: fas
+    icon: file-pdf
+    name: PDF
+    url: 'https://arxiv.org/pdf/2501.14249.pdf'
+  - icon_pack: fas
     icon: scroll
     name: arXiv
-    url: 'https://arxiv.org/abs/2504.XXXXX'
+    url: 'https://arxiv.org/abs/2501.14249'
+  - icon_pack: fas
+    icon: database
+    name: Data
+    url: 'https://huggingface.co/datasets/cais/hle'
+  - icon_pack: fab
+    icon: github
+    name: Code
+    url: 'https://github.com/centerforaisafety/hle'
   - icon_pack: fas
     icon: table
     name: SEAL LLM Leaderboards
