@@ -1,0 +1,69 @@
+---
+title: "PhD Defense Completed - check the photo gallery!"
+date: 2024-07-04T12:00:00
+draft: false
+
+reading_time: true  # Show estimated reading time?
+share: false  # Show social sharing links?
+profile: true  # Show author profile?
+comments: true  # Show comments?
+
+# Optional header image (relative to `assets/media/` folder).
+header:
+  caption: ""
+  image: ""
+
+image:
+  placement: 1
+  caption: "PhD Defense"
+  focal_point: "Center"
+  preview_only: false
+  path: "defence2.jpg"
+
+---
+
+I have successfully defended my PhD thesis on July 4th, 2024. It was an incredible journey, and I am grateful for the support and guidance from my advisors, committee members, and colleagues.
+
+<!-- The committee highly complimented my presentation slides, which were meticulously crafted to convey the essence of my research effectively. -->
+
+<!-- ## Photo Album -->
+
+
+<!-- 
+{{< figure src="defence2.jpg" alt="Photo 1" caption="" >}}
+{{< figure src="defence7.jpg" alt="Photo 2" caption="" >}}
+{{< figure src="defence9.jpg" alt="Photo 3" caption="" >}}
+{{< figure src="defence4.jpg" alt="Photo 4" caption="" >}} -->
+
+<!-- | ![defence2](defence2.jpg) | ![defence7](defence7.jpg) |
+|:---:|:---:|
+| ![defence9](defence9.jpg) | ![defence4](defence4.jpg) | -->
+
+
+
+
+<!-- ## Watch My Defense -->
+
+<div style="text-align: center; margin: 20px 0;">
+  <iframe width="560" height="315" src="https://keeper.mpdl.mpg.de/seafhttp/files/58569756-59f4-4dd7-8b78-f6f5cf6ccc5c/video2270846264.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<!-- ## Presentation and Slides -->
+
+<div style="text-align: center; margin: 20px 0;">
+  <a href="/uploads/slides.pdf" class="button" target="_blank" rel="noopener" style="background-color: #007BFF; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-right: 10px;">View Slides</a>
+  <a href="/uploads/thesis.pdf" class="button" target="_blank" rel="noopener" style="background-color: #17A2B8; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">Read Thesis</a>
+</a>
+</div>
+
+
+
+I am excited to embark on the next chapter of my career and continue contributing to the field. Thank you to everyone who has supported me along this journey.
+
+
+Here are some memorable moments from my PhD defense day:
+
+<br><br><br><br><br>
+
+---
+
+{{< gallery album="./phd_defense" >}}
