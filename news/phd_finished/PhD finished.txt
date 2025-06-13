@@ -45,7 +45,7 @@ I have successfully defended my PhD thesis on July 4th, 2024. It was an incredib
 <!-- ## Watch My Defense -->
 
 <div style="text-align: center; margin: 20px 0;">
-  <iframe width="560" height="315" src="https://keeper.mpdl.mpg.de/seafhttp/files/58569756-59f4-4dd7-8b78-f6f5cf6ccc5c/video2270846264.mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://keeper.mpdl.mpg.de/seafhttp/files/58569756-59f4-4dd7-8b78-f6f5cf6ccc5c/video2270846264.mp4" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <!-- ## Presentation and Slides -->
 
